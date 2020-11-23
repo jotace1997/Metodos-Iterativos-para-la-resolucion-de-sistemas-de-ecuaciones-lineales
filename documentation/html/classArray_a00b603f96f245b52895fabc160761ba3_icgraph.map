@@ -1,0 +1,6 @@
+<map id="Array::Tamanio" name="Array::Tamanio">
+<area shape="rect" id="node1" title="Get Tamaño." alt="" coords="249,56,368,83"/>
+<area shape="rect" id="node2" href="$classMatrizCSR.html#ad02f0810adcb6447dd745143d777fb2b" title="Por cuestiones de eficiencia, para algunas cosas, es bueno tener la diagonal en un vector" alt="" coords="5,5,201,32"/>
+<area shape="rect" id="node3" href="$classMatrizCSR.html#a8fb96ba3f3ae1e9d134d8165f8c4bf33" title="Producto Matriz&#45;Vector." alt="" coords="24,56,183,83"/>
+<area shape="rect" id="node4" href="$classMatrizCSR.html#ae3bbfd15eb42115ff203ed69b79e7461" title="Precondiciona la matriz para conseguir una convergencia más rápida." alt="" coords="7,107,200,133"/>
+</map>

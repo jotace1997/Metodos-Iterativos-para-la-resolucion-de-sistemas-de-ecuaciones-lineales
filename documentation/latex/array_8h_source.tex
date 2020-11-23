@@ -1,0 +1,58 @@
+\hypertarget{array_8h_source}{}\doxysection{array.\+h}
+\label{array_8h_source}\index{include/array.h@{include/array.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#ifndef \_ARRAY\_H\_}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#define \_ARRAY\_H\_}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <fstream>}  }
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <vector>}   }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <math.h>}   }
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include <string>}   }
+\DoxyCodeLine{00008 \textcolor{preprocessor}{\#include <assert.h>} }
+\DoxyCodeLine{00010 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{\Hypertarget{array_8h_source_l00021}\mbox{\hyperlink{classArray}{00021}} \textcolor{keyword}{class }\mbox{\hyperlink{classArray}{Array}}}
+\DoxyCodeLine{00022 \{}
+\DoxyCodeLine{00023     \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024         vector <long double> datos; }
+\DoxyCodeLine{00026     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037         \mbox{\hyperlink{classArray}{Array}}();}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00043         \string~\mbox{\hyperlink{classArray}{Array}}();}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00062         \mbox{\hyperlink{classArray}{Array}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00085         \mbox{\hyperlink{classArray}{Array}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} n, \textcolor{keyword}{const} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} f);}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00103         \mbox{\hyperlink{classArray}{Array}}(\textcolor{keyword}{const} vector <long double> \&v);}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00120         \mbox{\hyperlink{classArray}{Array}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v);}
+\DoxyCodeLine{00121         }
+\DoxyCodeLine{00138         \mbox{\hyperlink{classArray}{Array}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v);}
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{00158         \mbox{\hyperlink{classArray}{Array}}  operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v);}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00178         \mbox{\hyperlink{classArray}{Array}}  operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v);}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00198         \mbox{\hyperlink{classArray}{Array}}  operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v);}
+\DoxyCodeLine{00199 }
+\DoxyCodeLine{00221         \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v);}
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00243         \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} operator[](\textcolor{keywordtype}{int} i) \textcolor{keyword}{const};}
+\DoxyCodeLine{00244 }
+\DoxyCodeLine{00268         \textcolor{keywordtype}{long} \textcolor{keywordtype}{double}\& operator[](\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{00269 }
+\DoxyCodeLine{00287         \textcolor{keywordtype}{int} Tamanio() \textcolor{keyword}{const};}
+\DoxyCodeLine{00288 }
+\DoxyCodeLine{00307         \textcolor{keywordtype}{void} Limpiar();}
+\DoxyCodeLine{00308     }
+\DoxyCodeLine{00324         \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} NormaInfinito();            }
+\DoxyCodeLine{00325 }
+\DoxyCodeLine{00345         \textcolor{keyword}{friend} istream\& operator>>(istream \&entrada, \mbox{\hyperlink{classArray}{Array}} \&v);  }
+\DoxyCodeLine{00346 }
+\DoxyCodeLine{00372         \textcolor{keyword}{friend} ostream\& operator<<(ostream \&salida, \mbox{\hyperlink{classArray}{Array}} \&v);   }
+\DoxyCodeLine{00373 \};}
+\DoxyCodeLine{00374 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

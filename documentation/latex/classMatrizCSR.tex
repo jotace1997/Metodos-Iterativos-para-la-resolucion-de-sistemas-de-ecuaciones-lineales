@@ -1,0 +1,447 @@
+\hypertarget{classMatrizCSR}{}\doxysection{Referencia de la Clase Matriz\+C\+SR}
+\label{classMatrizCSR}\index{MatrizCSR@{MatrizCSR}}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrizCSR_a5436ed40eeaac0e6cfbd987d03d3ffb4}{Matriz\+C\+SR}} ()
+\begin{DoxyCompactList}\small\item\em Contructor por defecto ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatrizCSR_a693bf325ca0142efbfe85c874febadef}{$\sim$\+Matriz\+C\+SR}} ()
+\begin{DoxyCompactList}\small\item\em Destructor ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatrizCSR_af771d3c43c6b2d01b024cd700b82dac6}{Matriz\+C\+SR}} (int f, int nn)
+\begin{DoxyCompactList}\small\item\em Contructor por parámetros ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatrizCSR_a127e38c201adfbf6180da0bcead8f316}{Matriz\+C\+SR}} (const \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} \&m)
+\begin{DoxyCompactList}\small\item\em Contructor de copia. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} \& \mbox{\hyperlink{classMatrizCSR_a2a52848a0125bd643ebfbf60022e7652}{operator=}} (const \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} \&m)
+\begin{DoxyCompactList}\small\item\em Operador de igualdad. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArray}{Array}} \mbox{\hyperlink{classMatrizCSR_a8fb96ba3f3ae1e9d134d8165f8c4bf33}{operator$\ast$}} (const \mbox{\hyperlink{classArray}{Array}} \&v)
+\begin{DoxyCompactList}\small\item\em Producto Matriz-\/\+Vector. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMatrizCSR_a8008ce471486c638d609b4a8f9e4d7e8}{Get\+Filas}} () const
+\begin{DoxyCompactList}\small\item\em Tamaño de la matriz ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArray}{Array}} \mbox{\hyperlink{classMatrizCSR_ad02f0810adcb6447dd745143d777fb2b}{Get\+No\+Diagonal}} () const
+\begin{DoxyCompactList}\small\item\em Por cuestiones de eficiencia, para algunas cosas, es bueno tener la diagonal en un vector ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} \mbox{\hyperlink{classMatrizCSR_ac541b1a16bfac5a64b8cb31164679533}{Get\+Diagonal\+Invertida}} () const
+\begin{DoxyCompactList}\small\item\em Inversa de la matriz. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMatrizCSR_ae3bbfd15eb42115ff203ed69b79e7461}{Precondicionar}} (const \mbox{\hyperlink{classArray}{Array}} \&v)
+\begin{DoxyCompactList}\small\item\em Precondiciona la matriz para conseguir una convergencia más rápida. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+istream \& \mbox{\hyperlink{classMatrizCSR_a8c335e66b2b0a38cf6aabc3a5ac55be2}{operator$>$$>$}} (istream \&entrada, \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} \&m)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador $>$$>$ (cin). \end{DoxyCompactList}\item 
+ostream \& \mbox{\hyperlink{classMatrizCSR_a15d4a3e9849d032b8fcce8e20acd1e18}{operator$<$$<$}} (ostream \&salida, \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} \&m)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador $<$$<$ (cout). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+
+
+Definición en la línea \mbox{\hyperlink{matrizCSR_8h_source_l00019}{19}} del archivo \mbox{\hyperlink{matrizCSR_8h_source}{matriz\+C\+S\+R.\+h}}.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classMatrizCSR_a5436ed40eeaac0e6cfbd987d03d3ffb4}\label{classMatrizCSR_a5436ed40eeaac0e6cfbd987d03d3ffb4}} 
+\index{MatrizCSR@{MatrizCSR}!MatrizCSR@{MatrizCSR}}
+\index{MatrizCSR@{MatrizCSR}!MatrizCSR@{MatrizCSR}}
+\doxysubsubsection{\texorpdfstring{MatrizCSR()}{MatrizCSR()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Matriz\+C\+S\+R\+::\+Matriz\+C\+SR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Contructor por defecto ~\newline
+ 
+
+No hacenada ya que de la reserva de memoria se encarga la biblioteca $<$vector$>$ \begin{DoxyVerb}   int main()
+   {
+       MatrizCSR m;
+   }
+\end{DoxyVerb}
+ 
+
+Definición en la línea \mbox{\hyperlink{matrizCSR_8cpp_source_l00003}{3}} del archivo \mbox{\hyperlink{matrizCSR_8cpp_source}{matriz\+C\+S\+R.\+cpp}}.
+
+\mbox{\Hypertarget{classMatrizCSR_a693bf325ca0142efbfe85c874febadef}\label{classMatrizCSR_a693bf325ca0142efbfe85c874febadef}} 
+\index{MatrizCSR@{MatrizCSR}!````~MatrizCSR@{$\sim$MatrizCSR}}
+\index{````~MatrizCSR@{$\sim$MatrizCSR}!MatrizCSR@{MatrizCSR}}
+\doxysubsubsection{\texorpdfstring{$\sim$MatrizCSR()}{~MatrizCSR()}}
+{\footnotesize\ttfamily Matriz\+C\+S\+R\+::$\sim$\+Matriz\+C\+SR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor ~\newline
+ 
+
+No hacenada ya que de la liberación de memoria se encarga la biblioteca $<$vector$>$ 
+
+Definición en la línea \mbox{\hyperlink{matrizCSR_8cpp_source_l00013}{13}} del archivo \mbox{\hyperlink{matrizCSR_8cpp_source}{matriz\+C\+S\+R.\+cpp}}.
+
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classMatrizCSR_a693bf325ca0142efbfe85c874febadef_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatrizCSR_af771d3c43c6b2d01b024cd700b82dac6}\label{classMatrizCSR_af771d3c43c6b2d01b024cd700b82dac6}} 
+\index{MatrizCSR@{MatrizCSR}!MatrizCSR@{MatrizCSR}}
+\index{MatrizCSR@{MatrizCSR}!MatrizCSR@{MatrizCSR}}
+\doxysubsubsection{\texorpdfstring{MatrizCSR()}{MatrizCSR()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Matriz\+C\+S\+R\+::\+Matriz\+C\+SR (\begin{DoxyParamCaption}\item[{int}]{f,  }\item[{int}]{nn }\end{DoxyParamCaption})}
+
+
+
+Contructor por parámetros ~\newline
+ 
+
+Reserva memoria para los 3 vectores e iniciliza las variables 
+\begin{DoxyParams}{Parámetros}
+{\em f} & Filas; \\
+\hline
+{\em nn} & Elementos no nulos \begin{DoxyVerb}   int main()
+   {
+       int fil, noNulos;
+       MatrizCSR m;
+
+       cout << "Filas y elementos no nulos de la matriz: ";
+       cin >> fil >> noNulos;
+
+       m= MatrizCSR(fil, noNulos);  //valores.size()= idColumas.size()= noNulos; ptrFilas= fil+1;
+   }
+\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{matrizCSR_8cpp_source_l00023}{23}} del archivo \mbox{\hyperlink{matrizCSR_8cpp_source}{matriz\+C\+S\+R.\+cpp}}.
+
+\mbox{\Hypertarget{classMatrizCSR_a127e38c201adfbf6180da0bcead8f316}\label{classMatrizCSR_a127e38c201adfbf6180da0bcead8f316}} 
+\index{MatrizCSR@{MatrizCSR}!MatrizCSR@{MatrizCSR}}
+\index{MatrizCSR@{MatrizCSR}!MatrizCSR@{MatrizCSR}}
+\doxysubsubsection{\texorpdfstring{MatrizCSR()}{MatrizCSR()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Matriz\+C\+S\+R\+::\+Matriz\+C\+SR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} \&}]{m }\end{DoxyParamCaption})}
+
+
+
+Contructor de copia. 
+
+Crea una \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} exactamente igual que ls pasada por parametro 
+\begin{DoxyParams}{Parámetros}
+{\em m} & \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} constante pasada por referencia ~\newline
+ \begin{DoxyVerb}   int main()
+   {
+       MatrizCSR a, b;
+
+       cin >> a;
+
+       b= MatrizCSR(a);
+   }
+\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{matrizCSR_8cpp_source_l00035}{35}} del archivo \mbox{\hyperlink{matrizCSR_8cpp_source}{matriz\+C\+S\+R.\+cpp}}.
+
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classMatrizCSR_ac541b1a16bfac5a64b8cb31164679533}\label{classMatrizCSR_ac541b1a16bfac5a64b8cb31164679533}} 
+\index{MatrizCSR@{MatrizCSR}!GetDiagonalInvertida@{GetDiagonalInvertida}}
+\index{GetDiagonalInvertida@{GetDiagonalInvertida}!MatrizCSR@{MatrizCSR}}
+\doxysubsubsection{\texorpdfstring{GetDiagonalInvertida()}{GetDiagonalInvertida()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} Matriz\+C\+S\+R\+::\+Get\+Diagonal\+Invertida (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Inversa de la matriz. 
+
+Creamos una matriz en la que las filas coinciden con los elementos no nulos. \begin{DoxyReturn}{Devuelve}
+Devuelve una \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} con la inversa de la diagonal de la matriz. \begin{DoxyVerb}   int main()
+   {
+        MatrizCSR a, noD;
+        MatrizCSR b;
+
+        cin >> a;
+        noD= a.GetDiagonalInvertida();
+
+        b= noD*a;   //La diagonal de b son todos 1
+   }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{matrizCSR_8cpp_source_l00110}{110}} del archivo \mbox{\hyperlink{matrizCSR_8cpp_source}{matriz\+C\+S\+R.\+cpp}}.
+
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classMatrizCSR_ac541b1a16bfac5a64b8cb31164679533_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatrizCSR_a8008ce471486c638d609b4a8f9e4d7e8}\label{classMatrizCSR_a8008ce471486c638d609b4a8f9e4d7e8}} 
+\index{MatrizCSR@{MatrizCSR}!GetFilas@{GetFilas}}
+\index{GetFilas@{GetFilas}!MatrizCSR@{MatrizCSR}}
+\doxysubsubsection{\texorpdfstring{GetFilas()}{GetFilas()}}
+{\footnotesize\ttfamily int Matriz\+C\+S\+R\+::\+Get\+Filas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Tamaño de la matriz ~\newline
+ 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el número de filas (o columnas, da igual ya que la matriz es cuadrada) de la matriz \begin{DoxyVerb}   int main()
+   {
+       MatrizCSR a;
+
+       cin >> a;
+
+       cout << "La matriz a tiene " << a.GetFilas() << " filas" << endl;
+   }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrizCSR_ad02f0810adcb6447dd745143d777fb2b}\label{classMatrizCSR_ad02f0810adcb6447dd745143d777fb2b}} 
+\index{MatrizCSR@{MatrizCSR}!GetNoDiagonal@{GetNoDiagonal}}
+\index{GetNoDiagonal@{GetNoDiagonal}!MatrizCSR@{MatrizCSR}}
+\doxysubsubsection{\texorpdfstring{GetNoDiagonal()}{GetNoDiagonal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArray}{Array}} Matriz\+C\+S\+R\+::\+Get\+No\+Diagonal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Por cuestiones de eficiencia, para algunas cosas, es bueno tener la diagonal en un vector ~\newline
+ 
+
+Dos bucles anidados que recorren la matriz por filas y cuando coincidan el indice de fila y columna escribir el valor correspondiente invertido en el vector. \begin{DoxyReturn}{Devuelve}
+Devuelve la diagonal negada en forma de \mbox{\hyperlink{classArray}{Array}} ~\newline
+ \begin{DoxyVerb}   int main()
+   {
+        MatrizCSR a;
+        Array noD;
+
+        cin >> a;
+
+        noD= a.GetNoDiagonal();
+   }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{matrizCSR_8cpp_source_l00092}{92}} del archivo \mbox{\hyperlink{matrizCSR_8cpp_source}{matriz\+C\+S\+R.\+cpp}}.
+
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrizCSR_ad02f0810adcb6447dd745143d777fb2b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatrizCSR_a8fb96ba3f3ae1e9d134d8165f8c4bf33}\label{classMatrizCSR_a8fb96ba3f3ae1e9d134d8165f8c4bf33}} 
+\index{MatrizCSR@{MatrizCSR}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!MatrizCSR@{MatrizCSR}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArray}{Array}} Matriz\+C\+S\+R\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classArray}{Array}} \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Producto Matriz-\/\+Vector. 
+
+Método más importante de todos, el método crea un \mbox{\hyperlink{classArray}{Array}} del mismo tamaño que v y mediante un bucle desde 0 hasta this-\/$>$ptr\+Filas.\+size()-\/1 lo va rellenando, cada iteración de este bucle corresponde a una fila de la matriz, por tanto, en cada iteración de este bucle se multiplica el valor correspondiente del \mbox{\hyperlink{classArray}{Array}} con toda la fila, se suman estos valores y se introducen en el vector resultado. Para ello, se declaran dos variables, inicio y fin, inicio valdrá this-\/$>$ptr\+Filas\mbox{[}i\mbox{]} y fin this-\/$>$ptr\+Filas\mbox{[}i+1\mbox{]} (i es el iterador del primer bucle) ahora ya tenemos el inicio y final de fila por tanto, creamos otro bucle que recorra el vector valores desde inicio hasta fin que sume todos los productos del valor correspondiente del vector con los valores de la fila en cuestión y cuando acabe, escribimos la suma en el vector resultado. 
+\begin{DoxyParams}{Parámetros}
+{\em v} & \mbox{\hyperlink{classArray}{Array}} constante pasado por referencia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Un \mbox{\hyperlink{classArray}{Array}} resultado de la multiplicación de la matriz por el vector. ~\newline
+ \begin{DoxyVerb}   int main()
+   {
+       MatrizCSR m;
+       Array v, mul;
+
+       cin >> m;
+       cin >> v
+
+       mul= m*v;
+
+       cout << "m*v= " << mul << endl;
+   }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{matrizCSR_8cpp_source_l00060}{60}} del archivo \mbox{\hyperlink{matrizCSR_8cpp_source}{matriz\+C\+S\+R.\+cpp}}.
+
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classMatrizCSR_a8fb96ba3f3ae1e9d134d8165f8c4bf33_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classMatrizCSR_a2a52848a0125bd643ebfbf60022e7652}\label{classMatrizCSR_a2a52848a0125bd643ebfbf60022e7652}} 
+\index{MatrizCSR@{MatrizCSR}!operator=@{operator=}}
+\index{operator=@{operator=}!MatrizCSR@{MatrizCSR}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} \& Matriz\+C\+S\+R\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} \&}]{m }\end{DoxyParamCaption})}
+
+
+
+Operador de igualdad. 
+
+Iguala una \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} a otra (this= m) 
+\begin{DoxyParams}{Parámetros}
+{\em m} & \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} constante pasada por referencia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Una \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} exactamente igual que la pasada por parametro \begin{DoxyVerb}   int main()
+   {
+       MatrizCSR a, b;
+
+       cin >> a;
+
+       b= a;
+   }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{matrizCSR_8cpp_source_l00045}{45}} del archivo \mbox{\hyperlink{matrizCSR_8cpp_source}{matriz\+C\+S\+R.\+cpp}}.
+
+\mbox{\Hypertarget{classMatrizCSR_ae3bbfd15eb42115ff203ed69b79e7461}\label{classMatrizCSR_ae3bbfd15eb42115ff203ed69b79e7461}} 
+\index{MatrizCSR@{MatrizCSR}!Precondicionar@{Precondicionar}}
+\index{Precondicionar@{Precondicionar}!MatrizCSR@{MatrizCSR}}
+\doxysubsubsection{\texorpdfstring{Precondicionar()}{Precondicionar()}}
+{\footnotesize\ttfamily void Matriz\+C\+S\+R\+::\+Precondicionar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classArray}{Array}} \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Precondiciona la matriz para conseguir una convergencia más rápida. 
+
+El método recorre la matriz y multiplica todos los valores de la misma fila con el valor correspondiente del vector (el vector es la inversa de esta matriz). 
+\begin{DoxyParams}{Parámetros}
+{\em v} & El vector que \char`\"{}multiplicará\char`\"{} la matriz ~\newline
+ \begin{DoxyVerb}   int main()
+   {
+        MatrizCSR a;
+        Array P;
+
+        cin >> a;
+
+        P= a.GetNoDiagonal();
+
+        a.Precondicionar(P);
+
+        cout << a; //La diagonal de a son todos 1
+   }
+\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{matrizCSR_8cpp_source_l00083}{83}} del archivo \mbox{\hyperlink{matrizCSR_8cpp_source}{matriz\+C\+S\+R.\+cpp}}.
+
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatrizCSR_ae3bbfd15eb42115ff203ed69b79e7461_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Documentación de las funciones relacionadas y clases amigas}
+\mbox{\Hypertarget{classMatrizCSR_a15d4a3e9849d032b8fcce8e20acd1e18}\label{classMatrizCSR_a15d4a3e9849d032b8fcce8e20acd1e18}} 
+\index{MatrizCSR@{MatrizCSR}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!MatrizCSR@{MatrizCSR}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{salida,  }\item[{\mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Sobrecarga del operador $<$$<$ (cout). 
+
+Hace lo contrario que el operador $>$$>$ convierte una matriz C\+SR en una matriz en formato matrix market 
+\begin{DoxyParams}{Parámetros}
+{\em salida} & Flujo de salida. \\
+\hline
+{\em m} & \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} para obtener los datos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Flujo de salida. \begin{DoxyVerb}   int main(int argc, char **argv[])
+   {
+        MatrizCSR a;
+        ifstream datosMatriz;
+        ofstream solucionMatriz;
+
+        datosMatriz.open(argv[1]);     
+        datosMatriz >> A;
+        datosMatriz.close();
+
+        //Trabajar con A
+
+        solucionMatriz.open("solucion.dat");    //Nombre que le hemos dado al fichero
+        solucionMatriz << A;
+        solucionMatriz.close();
+   }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{matrizCSR_8cpp_source_l00219}{219}} del archivo \mbox{\hyperlink{matrizCSR_8cpp_source}{matriz\+C\+S\+R.\+cpp}}.
+
+\mbox{\Hypertarget{classMatrizCSR_a8c335e66b2b0a38cf6aabc3a5ac55be2}\label{classMatrizCSR_a8c335e66b2b0a38cf6aabc3a5ac55be2}} 
+\index{MatrizCSR@{MatrizCSR}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!MatrizCSR@{MatrizCSR}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{entrada,  }\item[{\mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Sobrecarga del operador $>$$>$ (cin). 
+
+El método lee matrices en formato matrix market de un fichero y las convierte en formato C\+SR. Para ello, lee las dimensiones de la matriz en la primera línea y seguidamente reserva memoria para los 3 vectores. Luego lee linea a linea el archivo, cada línea se compone de 3 valores\+: fila columna valor Mientras no cambie la fila se incrementa un contador para saber cuantos valores hay en la fila y la columna y el valor se escriben en los vectores correspondientes en el mismo orden en el que se leen, cuando el valor de la fila cambia, se escribe el valor que haya en el contador en el vector prt\+Filas y se vuelve a inicializar el contador a 0. 
+\begin{DoxyParams}{Parámetros}
+{\em entrada} & Flujo de entrada. \\
+\hline
+{\em m} & \mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} para guardar los datos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Flujo de entrada. \begin{DoxyVerb}   int main(int argc, char **argv[])
+   {
+        MatrizCSR a;
+        ifstream datosMatriz;
+
+        datosMatriz.open(argv[1]);      //Path del fichero con los datos de la matriz en matrix market
+        datosMatriz >> A;
+        datosMatriz.close();
+   }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{matrizCSR_8cpp_source_l00137}{137}} del archivo \mbox{\hyperlink{matrizCSR_8cpp_source}{matriz\+C\+S\+R.\+cpp}}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{matrizCSR_8h}{matriz\+C\+S\+R.\+h}}\item 
+src/matriz\+C\+S\+R.\+cpp\end{DoxyCompactItemize}

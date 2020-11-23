@@ -1,0 +1,69 @@
+\hypertarget{jacobi_8cpp_source}{}\doxysection{jacobi.\+cpp}
+\label{jacobi_8cpp_source}\index{src/jacobi.cpp@{src/jacobi.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00027 \textcolor{preprocessor}{\#include <iostream>}                 }
+\DoxyCodeLine{00028 \textcolor{preprocessor}{\#include "../include/matrizCSR.h"}   }
+\DoxyCodeLine{00029 \textcolor{preprocessor}{\#include "../include/array.h"}       }
+\DoxyCodeLine{00030 \textcolor{preprocessor}{\#include <fstream>}                  }
+\DoxyCodeLine{00031 \textcolor{preprocessor}{\#include <sys/time.h>}               }
+\DoxyCodeLine{00033 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{\Hypertarget{jacobi_8cpp_source_l00035}\mbox{\hyperlink{jacobi_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{00035}} \textcolor{keywordtype}{int} \mbox{\hyperlink{jacobi_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} **argv)}
+\DoxyCodeLine{00036 \{}
+\DoxyCodeLine{00038     \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}} A, noD;               }
+\DoxyCodeLine{00039     \mbox{\hyperlink{classArray}{Array}} b, aux, x0, x1, aux1, P;}
+\DoxyCodeLine{00040     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} tolerancia, e;}
+\DoxyCodeLine{00041     \textcolor{keywordtype}{bool} salir=\textcolor{keyword}{false}, precondicionar=0;}
+\DoxyCodeLine{00042     \textcolor{keywordtype}{int} iteraciones=0;}
+\DoxyCodeLine{00043     ifstream datosMatriz, datosVector;}
+\DoxyCodeLine{00044     ofstream solucionVector;}
+\DoxyCodeLine{00045     \textcolor{keywordtype}{string} coeficientes, vectorDerecho, aproximacionInicial;}
+\DoxyCodeLine{00046     \textcolor{keyword}{struct }timeval t0, t1;}
+\DoxyCodeLine{00047     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} tiempo;}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00050     datosMatriz.open(argv[1]);}
+\DoxyCodeLine{00051     datosMatriz >> A;}
+\DoxyCodeLine{00052     datosMatriz.close();}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00055     datosVector.open(argv[2]);}
+\DoxyCodeLine{00056     datosVector >> b;}
+\DoxyCodeLine{00057     datosVector.close();}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00060     datosVector.open(argv[3]);}
+\DoxyCodeLine{00061     datosVector >> x0;}
+\DoxyCodeLine{00062     datosVector.close();}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00065     cout << \textcolor{stringliteral}{"Umbral de error: "};}
+\DoxyCodeLine{00066     cin >> e;}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     gettimeofday(\&t0, NULL);                        }
+\DoxyCodeLine{00069         noD= A.\mbox{\hyperlink{classMatrizCSR_ac541b1a16bfac5a64b8cb31164679533}{GetDiagonalInvertida}}();              }
+\DoxyCodeLine{00070         tolerancia= e*b.NormaInfinito();            }
+\DoxyCodeLine{00071         iteraciones= 0;                             }
+\DoxyCodeLine{00073         \textcolor{keywordflow}{do}                                          }
+\DoxyCodeLine{00074         \{     }
+\DoxyCodeLine{00075             aux= b -\/ A*x0;                          }
+\DoxyCodeLine{00076             x1= x0 + noD*aux;                       }
+\DoxyCodeLine{00078             \textcolor{keywordflow}{if}(aux.NormaInfinito()<tolerancia)      }
+\DoxyCodeLine{00079                 salir= \textcolor{keyword}{true};                        }
+\DoxyCodeLine{00080             \textcolor{keywordflow}{else}                                    }
+\DoxyCodeLine{00081                 x0= x1;                             }
+\DoxyCodeLine{00083             iteraciones++;                          }
+\DoxyCodeLine{00084         \} \textcolor{keywordflow}{while} (!salir);                           }
+\DoxyCodeLine{00085     gettimeofday(\&t1, NULL);                        }
+\DoxyCodeLine{00088     tiempo = ((t1.tv\_sec  -\/ t0.tv\_sec)*1000000u + t1.tv\_usec -\/ t0.tv\_usec)/1.e6;}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00091     solucionVector.open(\textcolor{stringliteral}{"solucion.dat"});}
+\DoxyCodeLine{00092     solucionVector << x1;}
+\DoxyCodeLine{00093     solucionVector.close(); }
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00096     cout << \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n> METODO DE JACOBI:"} << endl;}
+\DoxyCodeLine{00097     cout << \textcolor{stringliteral}{"\(\backslash\)t> Fichero de datos: "} << argv[1] << endl;}
+\DoxyCodeLine{00098     cout << \textcolor{stringliteral}{"\(\backslash\)t> Umbral de error: "} << e << endl;}
+\DoxyCodeLine{00099     cout << \textcolor{stringliteral}{"\(\backslash\)t> Iteraciones: "} << iteraciones << endl;}
+\DoxyCodeLine{00100     cout << \textcolor{stringliteral}{"\(\backslash\)t> Tiempo: "} << tiempo << endl;}
+\DoxyCodeLine{00101 \}}
+
+\end{DoxyCode}

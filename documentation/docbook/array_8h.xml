@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_array_8h">
+<title>Referencia del Archivo include/array.h</title>
+<indexterm><primary>include/array.h</primary></indexterm>
+<para>
+
+<para>Archivo de cabecera de la clase <link linkend="_classArray">Array</link> Vector abstracto para datos grande. Esta clase se usa para almacenar los vectores de datos(long double) para poder manipularlos más facil. </para>
+ 
+</para>
+<programlisting>#include &lt;fstream&gt;
+#include &lt;vector&gt;
+#include &lt;math.h&gt;
+#include &lt;string&gt;
+#include &lt;assert.h&gt;
+</programlisting>Dependencia gráfica adjunta para array.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="array_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="array_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Clases    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classArray">Array</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+
+<para>Archivo de cabecera de la clase <link linkend="_classArray">Array</link> Vector abstracto para datos grande. Esta clase se usa para almacenar los vectores de datos(long double) para poder manipularlos más facil. </para>
+
+<para><formalpara><title>Autor</title>
+
+<para>Juan Carlos Sánchez Cara </para>
+</formalpara>
+<formalpara><title>Fecha</title>
+
+<para>20/11/20 </para>
+</formalpara>
+</para>
+<para>
+Definición en el archivo <link linkend="_array_8h_source">array.h</link>.</para>
+</section>
+</section>

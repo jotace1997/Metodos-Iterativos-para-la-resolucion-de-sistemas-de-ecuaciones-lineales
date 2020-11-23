@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated">
+<title>Lista de clases</title>
+Lista de las clases, estructuras, uniones e interfaces con una breve descripción:<link linkend="_classArray">Array</link><link linkend="_classMatrizCSR">MatrizCSR</link></section>

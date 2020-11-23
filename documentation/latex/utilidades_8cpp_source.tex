@@ -1,0 +1,80 @@
+\hypertarget{utilidades_8cpp_source}{}\doxysection{utilidades.\+cpp}
+\label{utilidades_8cpp_source}\index{src/utilidades.cpp@{src/utilidades.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "../include/utilidades.h"}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00003 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 istream\& operator>>(istream \&entrada, vector<long double> \&v)}
+\DoxyCodeLine{00006 \{}
+\DoxyCodeLine{00007     \textcolor{keywordtype}{string} linea;}
+\DoxyCodeLine{00008     }
+\DoxyCodeLine{00009     \textcolor{keywordflow}{while} (getline(entrada, linea))     \textcolor{comment}{//Mientras queden lineas en el archivo guardar linea en linea}}
+\DoxyCodeLine{00010         v.push\_back(stold(linea));      \textcolor{comment}{//Introducimos el valor en el vector; stold() convierte un string a un long double}}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012     \textcolor{keywordflow}{return} entrada;}
+\DoxyCodeLine{00013 \}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 ostream\& operator<<(ostream \&salida, vector<long double> \&v)}
+\DoxyCodeLine{00016 \{}
+\DoxyCodeLine{00017     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<v.size(); i++)}
+\DoxyCodeLine{00018         salida << v[i] << endl;}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     \textcolor{keywordflow}{return} salida;}
+\DoxyCodeLine{00021 \}   }
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023 vector<long double> operator+(\textcolor{keyword}{const} vector <long double> \&v1, \textcolor{keyword}{const} vector <long double> \&v2)}
+\DoxyCodeLine{00024 \{}
+\DoxyCodeLine{00025     vector<long double> v;}
+\DoxyCodeLine{00026     }
+\DoxyCodeLine{00027     v.assign(v1.size(), 0.0);}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<v1.size(); i++)}
+\DoxyCodeLine{00030         v[i]= v1[i] + v2[i];}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     \textcolor{keywordflow}{return} v;}
+\DoxyCodeLine{00033 \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035 vector<long double> operator-\/(\textcolor{keyword}{const} vector <long double> \&v1, \textcolor{keyword}{const} vector <long double> \&v2)}
+\DoxyCodeLine{00036 \{}
+\DoxyCodeLine{00037     vector<long double> v;}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     v.assign(v1.size(), 0.0);}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<v1.size(); i++)}
+\DoxyCodeLine{00042         v[i]= v1[i] -\/ v2[i];}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{keywordflow}{return} v;}
+\DoxyCodeLine{00045 \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 vector<long double> operator*=(\textcolor{keyword}{const} vector <long double> \&v1, \textcolor{keyword}{const} vector <long double> \&v2)}
+\DoxyCodeLine{00048 \{}
+\DoxyCodeLine{00049     vector<long double> v;}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     v.assign(v1.size(), 0.0);}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<v1.size(); i++)}
+\DoxyCodeLine{00054         v[i]= v1[i]*v2[i];}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{keywordflow}{return} v;}
+\DoxyCodeLine{00057 \}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059 \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} NormaInfinito(\textcolor{keyword}{const} vector<long double> \&v)}
+\DoxyCodeLine{00060 \{}
+\DoxyCodeLine{00061     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} max= abs(v[0]); }
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<v.size(); i++)}
+\DoxyCodeLine{00064         \textcolor{keywordflow}{if}(abs(v[i])>max)}
+\DoxyCodeLine{00065             max= abs(v[i]);}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{keywordflow}{return} max;}
+\DoxyCodeLine{00068 \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070 \textcolor{keywordtype}{void} Precondicionar(vector<long double> \&v, \textcolor{keyword}{const} vector<long double> \&P)}
+\DoxyCodeLine{00071 \{}
+\DoxyCodeLine{00072     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<v.size(); i++)}
+\DoxyCodeLine{00073         v[i]*= P[i];}
+\DoxyCodeLine{00074 \}}
+
+\end{DoxyCode}

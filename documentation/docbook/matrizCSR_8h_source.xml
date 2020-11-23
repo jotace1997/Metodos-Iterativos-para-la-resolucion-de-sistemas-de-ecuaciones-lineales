@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_matrizCSR_8h_source">
+<title>matrizCSR.h</title>
+<indexterm><primary>include/matrizCSR.h</primary></indexterm>
+<programlisting>00001 <emphasis role="preprocessor">#ifndef&#32;_MATRIZ_CSR_H</emphasis>
+00002 <emphasis role="preprocessor">#define&#32;_MATRIZ_CSR_H</emphasis>
+00003 
+00004 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00005 <emphasis role="preprocessor">#include&#32;&lt;fstream&gt;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;
+00006 <emphasis role="preprocessor">#include&#32;&lt;assert.h&gt;</emphasis>&#32;&#32;&#32;&#32;&#32;
+00007 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_array_8h">array.h</link>&quot;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;
+00009 <emphasis role="keyword">using&#32;namespace&#32;</emphasis>std;
+00010 
+<anchor xml:id="_matrizCSR_8h_source_1l00019"/><link linkend="_classMatrizCSR">00019</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_classMatrizCSR">MatrizCSR</link>
+00020 {
+00021 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;filas;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;noNulos;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classArray">Array</link>&#32;valores;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;int&gt;&#32;idColumnas;&#32;&#32;&#32;&#32;&#32;
+00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;vector&lt;int&gt;&#32;ptrFilas;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00029 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>();&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00041 
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;~<link linkend="_classMatrizCSR">MatrizCSR</link>();&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00047 
+00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>(<emphasis role="keywordtype">int</emphasis>&#32;f,&#32;<emphasis role="keywordtype">int</emphasis>&#32;nn);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00067 
+00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>&#32;&amp;m);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00084 
+00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>&amp;&#32;operator=(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>&#32;&amp;m);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00102 
+00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classArray">Array</link>&#32;operator*(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classArray">Array</link>&#32;&amp;v);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00131 
+00146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;GetFilas()&#32;<emphasis role="keyword">const</emphasis>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classArray">Array</link>&#32;GetNoDiagonal()&#32;<emphasis role="keyword">const</emphasis>;&#32;&#32;
+00166 
+00184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>&#32;GetDiagonalInvertida()&#32;<emphasis role="keyword">const</emphasis>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00185 
+00207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;Precondicionar(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classArray">Array</link>&#32;&amp;v);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00208 
+00234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">friend</emphasis>&#32;istream&amp;&#32;operator&gt;&gt;(istream&#32;&amp;entrada,&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>&#32;&amp;m);&#32;
+00235 
+00261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">friend</emphasis>&#32;ostream&amp;&#32;operator&lt;&lt;(ostream&#32;&amp;salida,&#32;&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>&#32;&amp;m);
+00262 };
+00263 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

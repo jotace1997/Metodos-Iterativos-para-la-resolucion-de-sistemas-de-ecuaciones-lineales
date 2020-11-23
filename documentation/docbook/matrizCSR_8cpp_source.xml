@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_matrizCSR_8cpp_source">
+<title>matrizCSR.cpp</title>
+<indexterm><primary>src/matrizCSR.cpp</primary></indexterm>
+<programlisting>00001 <emphasis role="preprocessor">#include&#32;&quot;../include/matrizCSR.h&quot;</emphasis>
+00002 
+<anchor xml:id="_matrizCSR_8cpp_source_1l00003"/><link linkend="_classMatrizCSR_1a5436ed40eeaac0e6cfbd987d03d3ffb4">00003</link> <link linkend="_classMatrizCSR_1a5436ed40eeaac0e6cfbd987d03d3ffb4">MatrizCSR::MatrizCSR</link>()
+00004 {
+00005 &#32;&#32;&#32;&#32;filas=&#32;0;
+00006 &#32;&#32;&#32;&#32;noNulos=&#32;0;
+00007 
+00008 &#32;&#32;&#32;&#32;valores=&#32;<link linkend="_classArray">Array</link>(noNulos);
+00009 &#32;&#32;&#32;&#32;idColumnas=&#32;vector&lt;int&gt;(noNulos);
+00010 &#32;&#32;&#32;&#32;ptrFilas=&#32;vector&lt;int&gt;(filas&#32;+&#32;1);
+00011 }
+00012 
+<anchor xml:id="_matrizCSR_8cpp_source_1l00013"/><link linkend="_classMatrizCSR_1a693bf325ca0142efbfe85c874febadef">00013</link> <link linkend="_classMatrizCSR_1a693bf325ca0142efbfe85c874febadef">MatrizCSR::~MatrizCSR</link>()
+00014 {
+00015 &#32;&#32;&#32;&#32;filas=&#32;-1;
+00016 &#32;&#32;&#32;&#32;noNulos=&#32;-1;
+00017 
+00018 &#32;&#32;&#32;&#32;valores.<link linkend="_classArray_1a360569587fdf350f6397521b7fa1d506">Limpiar</link>();
+00019 &#32;&#32;&#32;&#32;idColumnas.erase(idColumnas.begin(),&#32;idColumnas.end());
+00020 &#32;&#32;&#32;&#32;ptrFilas.erase(ptrFilas.begin(),&#32;ptrFilas.end());
+00021 }
+00022 
+<anchor xml:id="_matrizCSR_8cpp_source_1l00023"/><link linkend="_classMatrizCSR_1af771d3c43c6b2d01b024cd700b82dac6">00023</link> <link linkend="_classMatrizCSR_1a5436ed40eeaac0e6cfbd987d03d3ffb4">MatrizCSR::MatrizCSR</link>(<emphasis role="keywordtype">int</emphasis>&#32;f,&#32;<emphasis role="keywordtype">int</emphasis>&#32;nn)
+00024 {
+00025 &#32;&#32;&#32;&#32;assert(f&gt;0&#32;&amp;&amp;&#32;nn&gt;0);
+00026 
+00027 &#32;&#32;&#32;&#32;filas=&#32;f;
+00028 &#32;&#32;&#32;&#32;noNulos=&#32;nn;
+00029 
+00030 &#32;&#32;&#32;&#32;valores=&#32;<link linkend="_classArray">Array</link>(noNulos);
+00031 &#32;&#32;&#32;&#32;idColumnas.resize(noNulos);
+00032 &#32;&#32;&#32;&#32;ptrFilas.resize(filas+1);
+00033 }
+00034 
+<anchor xml:id="_matrizCSR_8cpp_source_1l00035"/><link linkend="_classMatrizCSR_1a127e38c201adfbf6180da0bcead8f316">00035</link> <link linkend="_classMatrizCSR_1a5436ed40eeaac0e6cfbd987d03d3ffb4">MatrizCSR::MatrizCSR</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>&#32;&amp;m)
+00036 {
+00037 &#32;&#32;&#32;&#32;filas=&#32;m.filas;
+00038 &#32;&#32;&#32;&#32;noNulos=&#32;m.noNulos;
+00039 
+00040 &#32;&#32;&#32;&#32;valores=&#32;m.valores;
+00041 &#32;&#32;&#32;&#32;idColumnas=&#32;m.idColumnas;
+00042 &#32;&#32;&#32;&#32;ptrFilas=&#32;m.ptrFilas;
+00043 }
+00044 
+<anchor xml:id="_matrizCSR_8cpp_source_1l00045"/><link linkend="_classMatrizCSR_1a2a52848a0125bd643ebfbf60022e7652">00045</link> <link linkend="_classMatrizCSR">MatrizCSR</link>&amp;&#32;<link linkend="_classMatrizCSR_1a2a52848a0125bd643ebfbf60022e7652">MatrizCSR::operator=</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>&#32;&amp;m)
+00046 {
+00047 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">this</emphasis>!=&amp;m)
+00048 &#32;&#32;&#32;&#32;{
+00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;filas=&#32;m.filas;
+00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;noNulos=&#32;m.noNulos;
+00051 
+00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;valores=&#32;m.valores;
+00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;idColumnas=&#32;m.idColumnas;
+00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ptrFilas=&#32;m.ptrFilas;
+00055 &#32;&#32;&#32;&#32;}
+00056 
+00057 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+00058 }
+00059 
+<anchor xml:id="_matrizCSR_8cpp_source_1l00060"/><link linkend="_classMatrizCSR_1a8fb96ba3f3ae1e9d134d8165f8c4bf33">00060</link> <link linkend="_classArray">Array</link>&#32;<link linkend="_classMatrizCSR_1a8fb96ba3f3ae1e9d134d8165f8c4bf33">MatrizCSR::operator*</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classArray">Array</link>&#32;&amp;v)
+00061 {
+00062 &#32;&#32;&#32;&#32;assert(v.<link linkend="_classArray_1a00b603f96f245b52895fabc160761ba3">Tamanio</link>()==this-&gt;filas);
+00063 
+00064 &#32;&#32;&#32;&#32;<link linkend="_classArray">Array</link>&#32;mul(v.<link linkend="_classArray_1a00b603f96f245b52895fabc160761ba3">Tamanio</link>());
+00065 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;inicioFila,&#32;finFila;
+00066 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;suma;
+00067 
+00068 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;this-&gt;ptrFilas.size()-1;&#32;i++)
+00069 &#32;&#32;&#32;&#32;{
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;inicioFila=&#32;this-&gt;ptrFilas[i];
+00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;finFila=&#32;this-&gt;ptrFilas[i+1];
+00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;suma=&#32;0.0;
+00073 
+00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j=inicioFila;&#32;j&lt;finFila;&#32;j++)
+00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;suma+=&#32;this-&gt;valores[j]*v[this-&gt;idColumnas[j]];
+00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mul[i]=&#32;suma;
+00078 &#32;&#32;&#32;&#32;}&#32;&#32;&#32;&#32;
+00079 
+00080 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;mul;
+00081 }
+00082 
+<anchor xml:id="_matrizCSR_8cpp_source_1l00083"/><link linkend="_classMatrizCSR_1ae3bbfd15eb42115ff203ed69b79e7461">00083</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classMatrizCSR_1ae3bbfd15eb42115ff203ed69b79e7461">MatrizCSR::Precondicionar</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classArray">Array</link>&#32;&amp;v)
+00084 {
+00085 &#32;&#32;&#32;&#32;assert(v.<link linkend="_classArray_1a00b603f96f245b52895fabc160761ba3">Tamanio</link>()==this-&gt;filas);
+00086 &#32;&#32;&#32;&#32;
+00087 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;this-&gt;ptrFilas.size()-1;&#32;i++)
+00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j=this-&gt;ptrFilas[i];&#32;j&lt;this-&gt;ptrFilas[i+1];&#32;j++)
+00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;valores[j]*=&#32;v[this-&gt;idColumnas[j]];&#32;&#32;&#32;&#32;&#32;
+00090 }
+00091 
+<anchor xml:id="_matrizCSR_8cpp_source_1l00092"/><link linkend="_classMatrizCSR_1ad02f0810adcb6447dd745143d777fb2b">00092</link> <link linkend="_classArray">Array</link>&#32;<link linkend="_classMatrizCSR_1ad02f0810adcb6447dd745143d777fb2b">MatrizCSR::GetNoDiagonal</link>()<emphasis role="keyword">&#32;const</emphasis>
+00093 <emphasis role="keyword"></emphasis>{
+00094 &#32;&#32;&#32;&#32;<link linkend="_classArray">Array</link>&#32;d(this-&gt;filas);
+00095 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;salir;
+00096 
+00097 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;d.<link linkend="_classArray_1a00b603f96f245b52895fabc160761ba3">Tamanio</link>();&#32;i++)
+00098 &#32;&#32;&#32;&#32;{
+00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;salir=&#32;<emphasis role="keyword">false</emphasis>;
+00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j=this-&gt;ptrFilas[i];&#32;j&lt;this-&gt;ptrFilas[i&#32;+&#32;1]&#32;&amp;&amp;&#32;!salir;&#32;j++)
+00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(this-&gt;idColumnas[j]==i)&#32;&#32;&#32;&#32;&#32;&#32;
+00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;salir=&#32;<emphasis role="keyword">true</emphasis>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;d[i]=&#32;1.0/this-&gt;valores[j];
+00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00106 &#32;&#32;&#32;&#32;}
+00107 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;d;
+00108 }
+00109 
+<anchor xml:id="_matrizCSR_8cpp_source_1l00110"/><link linkend="_classMatrizCSR_1ac541b1a16bfac5a64b8cb31164679533">00110</link> <link linkend="_classMatrizCSR">MatrizCSR</link>&#32;<link linkend="_classMatrizCSR_1ac541b1a16bfac5a64b8cb31164679533">MatrizCSR::GetDiagonalInvertida</link>()<emphasis role="keyword">&#32;const</emphasis>
+00111 <emphasis role="keyword"></emphasis>{
+00112 &#32;&#32;&#32;&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>&#32;diagonal(this-&gt;filas,&#32;this-&gt;filas);&#32;&#32;&#32;<emphasis role="comment">//Llamo&#32;al&#32;constructor&#32;por&#32;parametros&#32;dandole&#32;cómo&#32;entrada&#32;el&#32;número&#32;de&#32;filas,&#32;columnas&#32;y&#32;valores&#32;noNulos&#32;que&#32;presenta&#32;la&#32;diagonal&#32;de&#32;cualquier&#32;matriz&#32;con&#32;todos&#32;los&#32;elementos&#32;de&#32;la&#32;diagonal&#32;distintos&#32;de&#32;0</emphasis>
+00113 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;salir;
+00114 
+00115 &#32;&#32;&#32;&#32;diagonal.ptrFilas[0]=&#32;0;
+00116 
+00117 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;diagonal.filas;&#32;i++)
+00118 &#32;&#32;&#32;&#32;{
+00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Al&#32;ser&#32;una&#32;matriz&#32;diagonal,&#32;las&#32;columnas&#32;se&#32;iran&#32;incrementando&#32;desde&#32;0&#32;hasta&#32;filas-1</emphasis>
+00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;diagonal.idColumnas[i]=&#32;i;
+00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Al&#32;ser&#32;una&#32;matriz&#32;diagonal,&#32;sólo&#32;hay&#32;1&#32;elemento&#32;en&#32;cada&#32;fila&#32;por&#32;tanto&#32;se&#32;incrementa&#32;en&#32;1&#32;cada&#32;celda&#32;del&#32;vector</emphasis>
+00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;diagonal.ptrFilas[i+1]=&#32;i+1;
+00123 
+00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Recorro&#32;la&#32;fila&#32;actual&#32;hasta&#32;dar&#32;con&#32;la&#32;celda&#32;que&#32;corresponde&#32;a&#32;la&#32;diagonal</emphasis>
+00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;salir=&#32;<emphasis role="keyword">false</emphasis>;
+00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j=this-&gt;ptrFilas[i];&#32;j&lt;this-&gt;ptrFilas[i&#32;+&#32;1]&#32;&amp;&amp;&#32;!salir;&#32;j++)
+00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(this-&gt;idColumnas[j]==i)&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//El&#32;identificador&#32;de&#32;columna&#32;de&#32;cada&#32;fila&#32;debe&#32;coincidir&#32;con&#32;la&#32;fila</emphasis>
+00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;salir=&#32;<emphasis role="keyword">true</emphasis>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Dejamos&#32;de&#32;seguir&#32;buscando</emphasis>
+00130 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;diagonal.valores.push_back(1.0/this-&gt;valores[j]);&#32;&#32;//Al&#32;ser&#32;la&#32;inversa&#32;de&#32;la&#32;diagonal,&#32;el&#32;dato&#32;leido&#32;debe&#32;ser&#32;el&#32;inverso</emphasis>
+00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;diagonal.valores[i]=&#32;1.0/this-&gt;valores[j];
+00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00133 &#32;&#32;&#32;&#32;}
+00134 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;diagonal;
+00135 }
+00136 
+<anchor xml:id="_matrizCSR_8cpp_source_1l00137"/><link linkend="_classMatrizCSR_1a8c335e66b2b0a38cf6aabc3a5ac55be2">00137</link> istream&amp;&#32;operator&gt;&gt;(istream&#32;&amp;entrada,&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>&#32;&amp;m)
+00138 {
+00139 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;linea1,&#32;linea2,&#32;aux;
+00140 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;suma=&#32;0,&#32;k=&#32;1,&#32;valAux=&#32;1,&#32;val;
+00141 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;primeraColumna,&#32;primeraLineaUtil;
+00142 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;f,&#32;c,&#32;nn;
+00143 
+00144 &#32;&#32;&#32;&#32;<emphasis role="comment">//Nos&#32;saltamos&#32;las&#32;lineas&#32;con&#32;comentarios&#32;al&#32;principio&#32;del&#32;archivo</emphasis>
+00145 &#32;&#32;&#32;&#32;primeraLineaUtil=&#32;<emphasis role="keyword">true</emphasis>;
+00146 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(getline(entrada,&#32;linea1)&#32;&amp;&amp;&#32;primeraLineaUtil)
+00147 &#32;&#32;&#32;&#32;{
+00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linea2=&#32;linea1;
+00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(linea1[0]!=<emphasis role="charliteral">&apos;%&apos;</emphasis>)
+00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;primeraLineaUtil=&#32;<emphasis role="keyword">false</emphasis>;
+00151 &#32;&#32;&#32;&#32;}
+00152 
+00153 &#32;&#32;&#32;&#32;<emphasis role="comment">//Leemos&#32;la&#32;primera&#32;linea&#32;util&#32;con&#32;el&#32;tamaño&#32;en&#32;filas,&#32;columnas&#32;y&#32;valores&#32;no&#32;nulos</emphasis>
+00154 &#32;&#32;&#32;&#32;aux=&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+00155 &#32;&#32;&#32;&#32;primeraColumna=&#32;<emphasis role="keyword">true</emphasis>;
+00156 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;linea2.size();&#32;i++)
+00157 &#32;&#32;&#32;&#32;{
+00158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(linea2[i]!=<emphasis role="charliteral">&apos;&#32;&apos;</emphasis>)
+00159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;aux+=&#32;linea2[i];
+00160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(primeraColumna)
+00163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f=&#32;stoi(aux);
+00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;primeraColumna=&#32;<emphasis role="keyword">false</emphasis>;
+00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;c=&#32;stoi(aux);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00169 
+00170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;aux=&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00172 &#32;&#32;&#32;&#32;}
+00173 &#32;&#32;&#32;&#32;nn=&#32;stoi(aux);
+00174 &#32;&#32;&#32;
+00175 &#32;&#32;&#32;&#32;<emphasis role="comment">//Dimensionamos&#32;los&#32;vectores&#32;ahora&#32;que&#32;sabemos&#32;el&#32;tamaño&#32;e&#32;inicializamos&#32;la&#32;primera&#32;posicion&#32;del&#32;vec.&#32;ptrFilas&#32;a&#32;0&#32;</emphasis>
+00176 &#32;&#32;&#32;&#32;m=&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>(f,&#32;nn);
+00177 &#32;&#32;&#32;&#32;k=&#32;0;
+00178 &#32;&#32;&#32;&#32;m.ptrFilas[k++]=&#32;0;
+00179 
+00180 &#32;&#32;&#32;&#32;<emphasis role="comment">//Leemos&#32;las&#32;lineas&#32;restantes&#32;del&#32;archivo&#32;e&#32;inicializamos&#32;los&#32;vectores</emphasis>
+00181 &#32;&#32;&#32;&#32;suma=&#32;0;
+00182 &#32;&#32;&#32;&#32;valAux=&#32;1;
+00183 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m.noNulos;&#32;i++)
+00184 &#32;&#32;&#32;&#32;{
+00185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;primeraColumna=&#32;<emphasis role="keyword">true</emphasis>;
+00186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;aux=&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+00187 
+00188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j=0;&#32;j&lt;linea1.size();&#32;j++)
+00189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(linea1[j]!=<emphasis role="charliteral">&apos;&#32;&apos;</emphasis>)
+00191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;aux+=&#32;linea1[j];
+00192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(aux!=<emphasis role="stringliteral">&quot;&quot;</emphasis>)
+00193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(primeraColumna)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Si&#32;se&#32;cumple,&#32;leemos&#32;la&#32;fila</emphasis>
+00195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;val=&#32;stoi(aux);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Leemos&#32;la&#32;posicion&#32;en&#32;la&#32;fila</emphasis>
+00197 
+00198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(valAux!=val)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Si&#32;la&#32;fila&#32;es&#32;distinta&#32;a&#32;la&#32;anterior</emphasis>
+00199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;k++;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Incrementamos&#32;la&#32;posicion&#32;del&#32;vector&#32;ptrFIlas&#32;para&#32;escribir</emphasis>
+00200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m.ptrFilas[k]=&#32;++suma;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Incrementamos&#32;siempre&#32;con&#32;cada&#32;fila&#32;que&#32;leemos,&#32;el&#32;valor&#32;final&#32;de&#32;suma&#32;es&#32;igual&#32;a&#32;m.noNulos</emphasis>
+00202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;valAux=&#32;val;
+00203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;primeraColumna=&#32;<emphasis role="keyword">false</emphasis>;
+00204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Si&#32;se&#32;cumple,&#32;leemos&#32;la&#32;columna</emphasis>
+00206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m.idColumnas[i]=&#32;stoi(aux)&#32;-&#32;1;
+00207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;aux=&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+00209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m.valores[i]=&#32;stold(aux);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Leemos&#32;el&#32;valor&#32;asociado&#32;a&#32;la&#32;fila&#32;y&#32;columna&#32;correspondiente&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+00212 
+00213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;getline(entrada,&#32;linea1);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Saltamos&#32;a&#32;la&#32;siguiente&#32;linea&#32;del&#32;archivo</emphasis>
+00214 &#32;&#32;&#32;&#32;}
+00215 
+00216 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;entrada;
+00217 }
+00218 
+<anchor xml:id="_matrizCSR_8cpp_source_1l00219"/><link linkend="_classMatrizCSR_1a15d4a3e9849d032b8fcce8e20acd1e18">00219</link> ostream&amp;&#32;operator&lt;&lt;(ostream&#32;&amp;salida,&#32;&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>&#32;&amp;m)
+00220 {
+00221 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;inicio,&#32;fin;
+00222 
+00223 &#32;&#32;&#32;&#32;salida&#32;&lt;&lt;&#32;m.filas&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;m.filas&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;m.noNulos&#32;&lt;&lt;&#32;endl;
+00224 
+00225 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m.filas+1;&#32;i++)
+00226 &#32;&#32;&#32;&#32;{
+00227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;inicio=&#32;m.ptrFilas[i];
+00228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fin=&#32;m.ptrFilas[i+1];
+00229 
+00230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;j=inicio;&#32;j&lt;fin;&#32;j++)
+00231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;salida&#32;&lt;&lt;&#32;i&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;m.idColumnas[j]&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;m.valores[j]&#32;&lt;&lt;&#32;endl;
+00232 &#32;&#32;&#32;&#32;}
+00233 &#32;&#32;&#32;&#32;
+00234 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;salida;
+00235 }
+</programlisting></section>

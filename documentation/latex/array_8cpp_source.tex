@@ -1,0 +1,146 @@
+\hypertarget{array_8cpp_source}{}\doxysection{array.\+cpp}
+\label{array_8cpp_source}\index{src/array.cpp@{src/array.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "../include/array.h"}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00003 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00005}\mbox{\hyperlink{classArray_ae20b3dbb4aa6083679c0dea835abd861}{00005}} \mbox{\hyperlink{classArray_ae20b3dbb4aa6083679c0dea835abd861}{Array::Array}}()}
+\DoxyCodeLine{00006 \{}
+\DoxyCodeLine{00007     datos.resize(0);}
+\DoxyCodeLine{00008 \}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00010}\mbox{\hyperlink{classArray_abcabe567f41f7798d2f97babcc443c6f}{00010}} \mbox{\hyperlink{classArray_abcabe567f41f7798d2f97babcc443c6f}{Array::\string~Array}}()}
+\DoxyCodeLine{00011 \{}
+\DoxyCodeLine{00012     datos.erase(datos.begin(), datos.end());}
+\DoxyCodeLine{00013 \}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00015}\mbox{\hyperlink{classArray_a81da5e767429d41a9ebbe2322fdde153}{00015}} \mbox{\hyperlink{classArray_ae20b3dbb4aa6083679c0dea835abd861}{Array::Array}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} n)}
+\DoxyCodeLine{00016 \{}
+\DoxyCodeLine{00017     datos.resize(n);}
+\DoxyCodeLine{00018 \}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00020}\mbox{\hyperlink{classArray_ac97f0bf69ad133fde251c61a9ef664c0}{00020}} \mbox{\hyperlink{classArray_ae20b3dbb4aa6083679c0dea835abd861}{Array::Array}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} n, \textcolor{keyword}{const} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} f)}
+\DoxyCodeLine{00021 \{}
+\DoxyCodeLine{00022     datos.assign(n, f);}
+\DoxyCodeLine{00023 \}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00025}\mbox{\hyperlink{classArray_a83cdab5f5e4be15373f0e98d93602c57}{00025}} \mbox{\hyperlink{classArray_ae20b3dbb4aa6083679c0dea835abd861}{Array::Array}}(\textcolor{keyword}{const} vector <long double> \&v)}
+\DoxyCodeLine{00026 \{}
+\DoxyCodeLine{00027     datos= v;}
+\DoxyCodeLine{00028 \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00030}\mbox{\hyperlink{classArray_a65de238299b3f3ee0d9ea2c782a40d26}{00030}} \mbox{\hyperlink{classArray}{Array}}\& \mbox{\hyperlink{classArray_a65de238299b3f3ee0d9ea2c782a40d26}{Array::operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v)}
+\DoxyCodeLine{00031 \{}
+\DoxyCodeLine{00032     \textcolor{keywordflow}{if}(\textcolor{keyword}{this}!=\&v)}
+\DoxyCodeLine{00033         datos= v.datos;             }
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00036 \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00038}\mbox{\hyperlink{classArray_a69a6cda22a2884a8d3a3fd3d098bd07b}{00038}} \mbox{\hyperlink{classArray}{Array}} \mbox{\hyperlink{classArray_a69a6cda22a2884a8d3a3fd3d098bd07b}{Array::operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v)}
+\DoxyCodeLine{00039 \{}
+\DoxyCodeLine{00040     assert(this-\/>datos.size()==v.datos.size());}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \mbox{\hyperlink{classArray}{Array}} suma(this-\/>datos.size());}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<this-\/>datos.size(); i++)}
+\DoxyCodeLine{00045         suma[i]= this-\/>datos[i] + v.datos[i];}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{keywordflow}{return} suma;}
+\DoxyCodeLine{00048 \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00050}\mbox{\hyperlink{classArray_ab2596757c9d351c191cc4a07f7257824}{00050}} \mbox{\hyperlink{classArray}{Array}} \mbox{\hyperlink{classArray_ab2596757c9d351c191cc4a07f7257824}{Array::operator-\/}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v)}
+\DoxyCodeLine{00051 \{}
+\DoxyCodeLine{00052     assert(this-\/>datos.size()==v.datos.size());}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054     \mbox{\hyperlink{classArray}{Array}} resta(this-\/>datos.size());}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<this-\/>datos.size(); i++)}
+\DoxyCodeLine{00057         resta[i]= this-\/>datos[i] -\/ v.datos[i];}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{keywordflow}{return} resta;}
+\DoxyCodeLine{00060 \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00062}\mbox{\hyperlink{classArray_a989ea1342a0b2baed60d97e666bd3fee}{00062}} \mbox{\hyperlink{classArray}{Array}} \mbox{\hyperlink{classArray_a989ea1342a0b2baed60d97e666bd3fee}{Array::operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v)}
+\DoxyCodeLine{00063 \{}
+\DoxyCodeLine{00064     assert(this-\/>datos.size()==v.datos.size());}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \mbox{\hyperlink{classArray}{Array}} producto(this-\/>datos.size());}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<this-\/>datos.size(); i++)}
+\DoxyCodeLine{00069         producto[i]= this-\/>datos[i]*v.datos[i];}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     \textcolor{keywordflow}{return} producto;}
+\DoxyCodeLine{00072 \}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00074}\mbox{\hyperlink{classArray_af69e814b6b38cfa766d88b033ffd9ea6}{00074}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classArray_af69e814b6b38cfa766d88b033ffd9ea6}{Array::operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v)}
+\DoxyCodeLine{00075 \{}
+\DoxyCodeLine{00076     assert(this-\/>datos.size()==v.datos.size());}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078     \textcolor{keywordtype}{bool} iguales= \textcolor{keyword}{true};}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<this-\/>datos.size() \&\& iguales; i++)}
+\DoxyCodeLine{00081         \textcolor{keywordflow}{if}(this-\/>datos[i]!=v.datos[i])}
+\DoxyCodeLine{00082             iguales= \textcolor{keyword}{false};}
+\DoxyCodeLine{00083 }
+\DoxyCodeLine{00084     \textcolor{keywordflow}{return} iguales;}
+\DoxyCodeLine{00085 \}}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00087}\mbox{\hyperlink{classArray_a906e5b658323cee060cc0243cfc93b62}{00087}} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classArray_a906e5b658323cee060cc0243cfc93b62}{Array::operator[]}}(\textcolor{keywordtype}{int} i)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00088 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00089     assert(i>=0 \&\& i<this-\/>datos.size());}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091     \textcolor{keywordflow}{return} datos[i];}
+\DoxyCodeLine{00092 \}}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00094}\mbox{\hyperlink{classArray_a10670c5a12d87fbb212246b6fce418e4}{00094}} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double}\& \mbox{\hyperlink{classArray_a906e5b658323cee060cc0243cfc93b62}{Array::operator[]}}(\textcolor{keywordtype}{int} i)}
+\DoxyCodeLine{00095 \{}
+\DoxyCodeLine{00096     assert(i>=0 \&\& i<this-\/>datos.size());}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098     \textcolor{keywordflow}{return} datos[i];}
+\DoxyCodeLine{00099 \}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00101}\mbox{\hyperlink{classArray_a00b603f96f245b52895fabc160761ba3}{00101}} \textcolor{keywordtype}{int} \mbox{\hyperlink{classArray_a00b603f96f245b52895fabc160761ba3}{Array::Tamanio}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00102 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00103     \textcolor{keywordflow}{return} datos.size();}
+\DoxyCodeLine{00104 \}}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00106}\mbox{\hyperlink{classArray_a360569587fdf350f6397521b7fa1d506}{00106}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classArray_a360569587fdf350f6397521b7fa1d506}{Array::Limpiar}}()}
+\DoxyCodeLine{00107 \{}
+\DoxyCodeLine{00108     datos.erase(datos.begin(), datos.end());}
+\DoxyCodeLine{00109 \}}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00111}\mbox{\hyperlink{classArray_a69abad4a15c5ab1f3a07578d6e33a044}{00111}} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{classArray_a69abad4a15c5ab1f3a07578d6e33a044}{Array::NormaInfinito}}()}
+\DoxyCodeLine{00112 \{}
+\DoxyCodeLine{00113     assert(this-\/>datos.size()>0);}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} max= abs(datos[0]);}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<this-\/>datos.size(); i++)}
+\DoxyCodeLine{00118         \textcolor{keywordflow}{if}(abs(this-\/>datos[i])>max)}
+\DoxyCodeLine{00119             max= abs(this-\/>datos[i]);}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121     \textcolor{keywordflow}{return} max;}
+\DoxyCodeLine{00122 \}}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00124}\mbox{\hyperlink{classArray_ac08d1f04ff1addddc1b356432c636765}{00124}} istream\& operator>>(istream \&entrada, \mbox{\hyperlink{classArray}{Array}} \&v)}
+\DoxyCodeLine{00125 \{}
+\DoxyCodeLine{00126     \textcolor{keywordtype}{string} linea;}
+\DoxyCodeLine{00127     }
+\DoxyCodeLine{00128     \textcolor{keywordflow}{while} (getline(entrada, linea))     }
+\DoxyCodeLine{00129         v.datos.push\_back(stold(linea));      }
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131     \textcolor{keywordflow}{return} entrada;}
+\DoxyCodeLine{00132 \}}
+\DoxyCodeLine{00133 }
+\DoxyCodeLine{\Hypertarget{array_8cpp_source_l00134}\mbox{\hyperlink{classArray_a92526b895e0f8a3d801d0d4a2e3e186d}{00134}} ostream\& operator<<(ostream \&salida, \mbox{\hyperlink{classArray}{Array}} \&v)}
+\DoxyCodeLine{00135 \{}
+\DoxyCodeLine{00136     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<v.datos.size(); i++)}
+\DoxyCodeLine{00137         salida << v.datos[i] << endl;}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139     \textcolor{keywordflow}{return} salida;}
+\DoxyCodeLine{00140 \}}
+
+\end{DoxyCode}

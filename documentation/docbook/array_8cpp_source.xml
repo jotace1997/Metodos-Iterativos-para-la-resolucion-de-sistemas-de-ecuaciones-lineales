@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_array_8cpp_source">
+<title>array.cpp</title>
+<indexterm><primary>src/array.cpp</primary></indexterm>
+<programlisting>00001 <emphasis role="preprocessor">#include&#32;&quot;../include/array.h&quot;</emphasis>
+00002 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+00003 <emphasis role="keyword">using&#32;namespace&#32;</emphasis>std;
+00004 
+<anchor xml:id="_array_8cpp_source_1l00005"/><link linkend="_classArray_1ae20b3dbb4aa6083679c0dea835abd861">00005</link> <link linkend="_classArray_1ae20b3dbb4aa6083679c0dea835abd861">Array::Array</link>()
+00006 {
+00007 &#32;&#32;&#32;&#32;datos.resize(0);
+00008 }
+00009 
+<anchor xml:id="_array_8cpp_source_1l00010"/><link linkend="_classArray_1abcabe567f41f7798d2f97babcc443c6f">00010</link> <link linkend="_classArray_1abcabe567f41f7798d2f97babcc443c6f">Array::~Array</link>()
+00011 {
+00012 &#32;&#32;&#32;&#32;datos.erase(datos.begin(),&#32;datos.end());
+00013 }
+00014 
+<anchor xml:id="_array_8cpp_source_1l00015"/><link linkend="_classArray_1a81da5e767429d41a9ebbe2322fdde153">00015</link> <link linkend="_classArray_1ae20b3dbb4aa6083679c0dea835abd861">Array::Array</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;n)
+00016 {
+00017 &#32;&#32;&#32;&#32;datos.resize(n);
+00018 }
+00019 
+<anchor xml:id="_array_8cpp_source_1l00020"/><link linkend="_classArray_1ac97f0bf69ad133fde251c61a9ef664c0">00020</link> <link linkend="_classArray_1ae20b3dbb4aa6083679c0dea835abd861">Array::Array</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;n,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;f)
+00021 {
+00022 &#32;&#32;&#32;&#32;datos.assign(n,&#32;f);
+00023 }
+00024 
+<anchor xml:id="_array_8cpp_source_1l00025"/><link linkend="_classArray_1a83cdab5f5e4be15373f0e98d93602c57">00025</link> <link linkend="_classArray_1ae20b3dbb4aa6083679c0dea835abd861">Array::Array</link>(<emphasis role="keyword">const</emphasis>&#32;vector&#32;&lt;long&#32;double&gt;&#32;&amp;v)
+00026 {
+00027 &#32;&#32;&#32;&#32;datos=&#32;v;
+00028 }
+00029 
+<anchor xml:id="_array_8cpp_source_1l00030"/><link linkend="_classArray_1a65de238299b3f3ee0d9ea2c782a40d26">00030</link> <link linkend="_classArray">Array</link>&amp;&#32;<link linkend="_classArray_1a65de238299b3f3ee0d9ea2c782a40d26">Array::operator=</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classArray">Array</link>&#32;&amp;v)
+00031 {
+00032 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<emphasis role="keyword">this</emphasis>!=&amp;v)
+00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;datos=&#32;v.datos;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00034 
+00035 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+00036 }
+00037 
+<anchor xml:id="_array_8cpp_source_1l00038"/><link linkend="_classArray_1a69a6cda22a2884a8d3a3fd3d098bd07b">00038</link> <link linkend="_classArray">Array</link>&#32;<link linkend="_classArray_1a69a6cda22a2884a8d3a3fd3d098bd07b">Array::operator+</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classArray">Array</link>&#32;&amp;v)
+00039 {
+00040 &#32;&#32;&#32;&#32;assert(this-&gt;datos.size()==v.datos.size());
+00041 
+00042 &#32;&#32;&#32;&#32;<link linkend="_classArray">Array</link>&#32;suma(this-&gt;datos.size());
+00043 
+00044 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;this-&gt;datos.size();&#32;i++)
+00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;suma[i]=&#32;this-&gt;datos[i]&#32;+&#32;v.datos[i];
+00046 
+00047 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;suma;
+00048 }
+00049 
+<anchor xml:id="_array_8cpp_source_1l00050"/><link linkend="_classArray_1ab2596757c9d351c191cc4a07f7257824">00050</link> <link linkend="_classArray">Array</link>&#32;<link linkend="_classArray_1ab2596757c9d351c191cc4a07f7257824">Array::operator-</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classArray">Array</link>&#32;&amp;v)
+00051 {
+00052 &#32;&#32;&#32;&#32;assert(this-&gt;datos.size()==v.datos.size());
+00053 
+00054 &#32;&#32;&#32;&#32;<link linkend="_classArray">Array</link>&#32;resta(this-&gt;datos.size());
+00055 
+00056 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;this-&gt;datos.size();&#32;i++)
+00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;resta[i]=&#32;this-&gt;datos[i]&#32;-&#32;v.datos[i];
+00058 
+00059 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;resta;
+00060 }
+00061 
+<anchor xml:id="_array_8cpp_source_1l00062"/><link linkend="_classArray_1a989ea1342a0b2baed60d97e666bd3fee">00062</link> <link linkend="_classArray">Array</link>&#32;<link linkend="_classArray_1a989ea1342a0b2baed60d97e666bd3fee">Array::operator*</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classArray">Array</link>&#32;&amp;v)
+00063 {
+00064 &#32;&#32;&#32;&#32;assert(this-&gt;datos.size()==v.datos.size());
+00065 
+00066 &#32;&#32;&#32;&#32;<link linkend="_classArray">Array</link>&#32;producto(this-&gt;datos.size());
+00067 
+00068 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;this-&gt;datos.size();&#32;i++)
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;producto[i]=&#32;this-&gt;datos[i]*v.datos[i];
+00070 
+00071 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;producto;
+00072 }
+00073 
+<anchor xml:id="_array_8cpp_source_1l00074"/><link linkend="_classArray_1af69e814b6b38cfa766d88b033ffd9ea6">00074</link> <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classArray_1af69e814b6b38cfa766d88b033ffd9ea6">Array::operator==</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classArray">Array</link>&#32;&amp;v)
+00075 {
+00076 &#32;&#32;&#32;&#32;assert(this-&gt;datos.size()==v.datos.size());
+00077 
+00078 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;iguales=&#32;<emphasis role="keyword">true</emphasis>;
+00079 
+00080 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;this-&gt;datos.size()&#32;&amp;&amp;&#32;iguales;&#32;i++)
+00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(this-&gt;datos[i]!=v.datos[i])
+00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;iguales=&#32;<emphasis role="keyword">false</emphasis>;
+00083 
+00084 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;iguales;
+00085 }
+00086 
+<anchor xml:id="_array_8cpp_source_1l00087"/><link linkend="_classArray_1a906e5b658323cee060cc0243cfc93b62">00087</link> <emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classArray_1a906e5b658323cee060cc0243cfc93b62">Array::operator[]</link>(<emphasis role="keywordtype">int</emphasis>&#32;i)<emphasis role="keyword">&#32;const</emphasis>
+00088 <emphasis role="keyword"></emphasis>{
+00089 &#32;&#32;&#32;&#32;assert(i&gt;=0&#32;&amp;&amp;&#32;i&lt;this-&gt;datos.size());
+00090 
+00091 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;datos[i];
+00092 }
+00093 
+<anchor xml:id="_array_8cpp_source_1l00094"/><link linkend="_classArray_1a10670c5a12d87fbb212246b6fce418e4">00094</link> <emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&amp;&#32;<link linkend="_classArray_1a906e5b658323cee060cc0243cfc93b62">Array::operator[]</link>(<emphasis role="keywordtype">int</emphasis>&#32;i)
+00095 {
+00096 &#32;&#32;&#32;&#32;assert(i&gt;=0&#32;&amp;&amp;&#32;i&lt;this-&gt;datos.size());
+00097 
+00098 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;datos[i];
+00099 }
+00100 
+<anchor xml:id="_array_8cpp_source_1l00101"/><link linkend="_classArray_1a00b603f96f245b52895fabc160761ba3">00101</link> <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classArray_1a00b603f96f245b52895fabc160761ba3">Array::Tamanio</link>()<emphasis role="keyword">&#32;const</emphasis>
+00102 <emphasis role="keyword"></emphasis>{
+00103 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;datos.size();
+00104 }
+00105 
+<anchor xml:id="_array_8cpp_source_1l00106"/><link linkend="_classArray_1a360569587fdf350f6397521b7fa1d506">00106</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classArray_1a360569587fdf350f6397521b7fa1d506">Array::Limpiar</link>()
+00107 {
+00108 &#32;&#32;&#32;&#32;datos.erase(datos.begin(),&#32;datos.end());
+00109 }
+00110 
+<anchor xml:id="_array_8cpp_source_1l00111"/><link linkend="_classArray_1a69abad4a15c5ab1f3a07578d6e33a044">00111</link> <emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classArray_1a69abad4a15c5ab1f3a07578d6e33a044">Array::NormaInfinito</link>()
+00112 {
+00113 &#32;&#32;&#32;&#32;assert(this-&gt;datos.size()&gt;0);
+00114 
+00115 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;max=&#32;abs(datos[0]);
+00116 
+00117 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=1;&#32;i&lt;this-&gt;datos.size();&#32;i++)
+00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(abs(this-&gt;datos[i])&gt;max)
+00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;max=&#32;abs(this-&gt;datos[i]);
+00120 
+00121 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;max;
+00122 }
+00123 
+<anchor xml:id="_array_8cpp_source_1l00124"/><link linkend="_classArray_1ac08d1f04ff1addddc1b356432c636765">00124</link> istream&amp;&#32;operator&gt;&gt;(istream&#32;&amp;entrada,&#32;<link linkend="_classArray">Array</link>&#32;&amp;v)
+00125 {
+00126 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;linea;
+00127 &#32;&#32;&#32;&#32;
+00128 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(getline(entrada,&#32;linea))&#32;&#32;&#32;&#32;&#32;
+00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;v.datos.push_back(stold(linea));&#32;&#32;&#32;&#32;&#32;&#32;
+00130 
+00131 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;entrada;
+00132 }
+00133 
+<anchor xml:id="_array_8cpp_source_1l00134"/><link linkend="_classArray_1a92526b895e0f8a3d801d0d4a2e3e186d">00134</link> ostream&amp;&#32;operator&lt;&lt;(ostream&#32;&amp;salida,&#32;<link linkend="_classArray">Array</link>&#32;&amp;v)
+00135 {
+00136 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;v.datos.size();&#32;i++)
+00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;salida&#32;&lt;&lt;&#32;v.datos[i]&#32;&lt;&lt;&#32;endl;
+00138 
+00139 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;salida;
+00140 }
+</programlisting></section>

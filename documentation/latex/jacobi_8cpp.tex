@@ -1,0 +1,123 @@
+\hypertarget{jacobi_8cpp}{}\doxysection{Referencia del Archivo src/jacobi.cpp}
+\label{jacobi_8cpp}\index{src/jacobi.cpp@{src/jacobi.cpp}}
+
+
+Código en C++ que resuelve el algoritmo de Jacobi para sistemas lineales.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}../include/matriz\+C\+S\+R.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/array.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+Dependencia gráfica adjunta para jacobi.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{jacobi_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{jacobi_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Código en C++ que resuelve el algoritmo de Jacobi para sistemas lineales. 
+
+Omitiendo la lectura y escritura de datos, el algoritmo en pocas palabras sería tal que así\+:~\newline
+DO~\newline
+ \{~\newline
+ x1= x0 + no\+D$\ast$(b -\/ A$\ast$x0);~\newline
+ x0= x1;~\newline
+\} W\+H\+I\+LE(M\+A\+X\+I\+M\+O\+\_\+\+A\+B\+S\+O\+L\+U\+TO(b -\/ A$\ast$x0)$>$(umbral\+Error$\ast$\+M\+A\+X\+I\+M\+O\+\_\+\+A\+B\+S\+O\+L\+U\+TO(b)));~\newline
+~\newline
+ Siendo los datos de entrada\+:~\newline
+\mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} A\+:= Matriz de coeficientes~\newline
+\mbox{\hyperlink{classArray}{Array}} b\+:= vector del lado derecho~\newline
+\mbox{\hyperlink{classArray}{Array}} x0\+:= Aproximación inicial~\newline
+long double umbral\+Error\+:= Precisión de la solución que se quiere obtener (del roden de 1e-\/20)~\newline
+~\newline
+ Los datos que se calculan\+:~\newline
+\mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} noD\+:= Matriz con la diagonal de A negada~\newline
+\mbox{\hyperlink{classArray}{Array}} x1\+:= Solución del sistema~\newline
+~\newline
+ Funciones\+:~\newline
+long double M\+A\+X\+I\+M\+O\+\_\+\+A\+B\+S\+O\+L\+U\+T\+O(\+Array)\+:= Devuelve el máximo absoluto de un vector.~\newline
+~\newline
+\begin{DoxyAuthor}{Autor}
+Juan Carlos Sánchez Cara 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+20/11/20 
+\end{DoxyDate}
+
+
+Definición en el archivo \mbox{\hyperlink{jacobi_8cpp_source}{jacobi.\+cpp}}.
+
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{jacobi_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{jacobi_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{jacobi.cpp@{jacobi.cpp}!main@{main}}
+\index{main@{main}!jacobi.cpp@{jacobi.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Declaración de datos
+
+$<$ Esto es una matriz
+
+Lectura de la matriz de coeficientes
+
+Lectura del vector derecho
+
+Lectura de la aproximación inicial
+
+Lectura del umbral de error
+
+Inicio del cronómetro
+
+Cálculo de la diagonal invertida de la matriz de coeficientes
+
+Cálculo de la tolerancia para saber cuando parar
+
+Inicialización de las iteraciones a 0
+
+H\+A\+C\+ER\+:
+
+\mbox{\hyperlink{classArray}{Array}} aux= (\mbox{\hyperlink{classArray}{Array}} b) -\/ (\mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} A)$\ast$(\mbox{\hyperlink{classArray}{Array}} x0)
+
+\mbox{\hyperlink{classArray}{Array}} x1= (\mbox{\hyperlink{classArray}{Array}} x0) + (\mbox{\hyperlink{classMatrizCSR}{Matriz\+C\+SR}} noD)$\ast$(\mbox{\hyperlink{classArray}{Array}} aux)
+
+SI el máximo absoluto del \mbox{\hyperlink{classArray}{Array}} aux es menor que la tolerancia previamente calculada\+:
+
+salir= true
+
+EN C\+A\+SO C\+O\+N\+T\+R\+A\+R\+IO\+:
+
+\mbox{\hyperlink{classArray}{Array}} x0= \mbox{\hyperlink{classArray}{Array}} x1
+
+Incremento las iteraciones en 1
+
+M\+I\+E\+N\+T\+R\+AS S\+A\+L\+IR= F\+A\+L\+SE
+
+Fin del cronometro
+
+Calculamos el tiempo total en segundos
+
+Creamos un fichero en el que escribimos la solución
+
+Mostramos información de la ejecución del programa por pantalla
+
+Definición en la línea \mbox{\hyperlink{jacobi_8cpp_source_l00035}{35}} del archivo \mbox{\hyperlink{jacobi_8cpp_source}{jacobi.\+cpp}}.
+
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{jacobi_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}

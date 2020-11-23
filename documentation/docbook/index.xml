@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index">
+    <info>
+    <title>Metodos iterativos para la resolución de sistemas lineales</title>
+    </info>
+<chapter>
+    <title>Documentación de las clases</title>
+    <xi:include href="classArray.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classMatrizCSR.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Documentación de archivos</title>
+    <xi:include href="array_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="array_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="matrizCSR_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="matrizCSR_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="jacobi_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="jacobi_8cpp_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

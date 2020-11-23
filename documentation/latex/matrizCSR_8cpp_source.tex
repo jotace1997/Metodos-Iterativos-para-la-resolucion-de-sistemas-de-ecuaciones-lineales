@@ -1,0 +1,241 @@
+\hypertarget{matrizCSR_8cpp_source}{}\doxysection{matriz\+C\+S\+R.\+cpp}
+\label{matrizCSR_8cpp_source}\index{src/matrizCSR.cpp@{src/matrizCSR.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include "../include/matrizCSR.h"}}
+\DoxyCodeLine{00002 }
+\DoxyCodeLine{\Hypertarget{matrizCSR_8cpp_source_l00003}\mbox{\hyperlink{classMatrizCSR_a5436ed40eeaac0e6cfbd987d03d3ffb4}{00003}} \mbox{\hyperlink{classMatrizCSR_a5436ed40eeaac0e6cfbd987d03d3ffb4}{MatrizCSR::MatrizCSR}}()}
+\DoxyCodeLine{00004 \{}
+\DoxyCodeLine{00005     filas= 0;}
+\DoxyCodeLine{00006     noNulos= 0;}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008     valores= \mbox{\hyperlink{classArray}{Array}}(noNulos);}
+\DoxyCodeLine{00009     idColumnas= vector<int>(noNulos);}
+\DoxyCodeLine{00010     ptrFilas= vector<int>(filas + 1);}
+\DoxyCodeLine{00011 \}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{\Hypertarget{matrizCSR_8cpp_source_l00013}\mbox{\hyperlink{classMatrizCSR_a693bf325ca0142efbfe85c874febadef}{00013}} \mbox{\hyperlink{classMatrizCSR_a693bf325ca0142efbfe85c874febadef}{MatrizCSR::\string~MatrizCSR}}()}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015     filas= -\/1;}
+\DoxyCodeLine{00016     noNulos= -\/1;}
+\DoxyCodeLine{00017 }
+\DoxyCodeLine{00018     valores.\mbox{\hyperlink{classArray_a360569587fdf350f6397521b7fa1d506}{Limpiar}}();}
+\DoxyCodeLine{00019     idColumnas.erase(idColumnas.begin(), idColumnas.end());}
+\DoxyCodeLine{00020     ptrFilas.erase(ptrFilas.begin(), ptrFilas.end());}
+\DoxyCodeLine{00021 \}}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{\Hypertarget{matrizCSR_8cpp_source_l00023}\mbox{\hyperlink{classMatrizCSR_af771d3c43c6b2d01b024cd700b82dac6}{00023}} \mbox{\hyperlink{classMatrizCSR_a5436ed40eeaac0e6cfbd987d03d3ffb4}{MatrizCSR::MatrizCSR}}(\textcolor{keywordtype}{int} f, \textcolor{keywordtype}{int} nn)}
+\DoxyCodeLine{00024 \{}
+\DoxyCodeLine{00025     assert(f>0 \&\& nn>0);}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     filas= f;}
+\DoxyCodeLine{00028     noNulos= nn;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030     valores= \mbox{\hyperlink{classArray}{Array}}(noNulos);}
+\DoxyCodeLine{00031     idColumnas.resize(noNulos);}
+\DoxyCodeLine{00032     ptrFilas.resize(filas+1);}
+\DoxyCodeLine{00033 \}}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{\Hypertarget{matrizCSR_8cpp_source_l00035}\mbox{\hyperlink{classMatrizCSR_a127e38c201adfbf6180da0bcead8f316}{00035}} \mbox{\hyperlink{classMatrizCSR_a5436ed40eeaac0e6cfbd987d03d3ffb4}{MatrizCSR::MatrizCSR}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}} \&m)}
+\DoxyCodeLine{00036 \{}
+\DoxyCodeLine{00037     filas= m.filas;}
+\DoxyCodeLine{00038     noNulos= m.noNulos;}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     valores= m.valores;}
+\DoxyCodeLine{00041     idColumnas= m.idColumnas;}
+\DoxyCodeLine{00042     ptrFilas= m.ptrFilas;}
+\DoxyCodeLine{00043 \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{\Hypertarget{matrizCSR_8cpp_source_l00045}\mbox{\hyperlink{classMatrizCSR_a2a52848a0125bd643ebfbf60022e7652}{00045}} \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}}\& \mbox{\hyperlink{classMatrizCSR_a2a52848a0125bd643ebfbf60022e7652}{MatrizCSR::operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}} \&m)}
+\DoxyCodeLine{00046 \{}
+\DoxyCodeLine{00047     \textcolor{keywordflow}{if}(\textcolor{keyword}{this}!=\&m)}
+\DoxyCodeLine{00048     \{}
+\DoxyCodeLine{00049         filas= m.filas;}
+\DoxyCodeLine{00050         noNulos= m.noNulos;}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052         valores= m.valores;}
+\DoxyCodeLine{00053         idColumnas= m.idColumnas;}
+\DoxyCodeLine{00054         ptrFilas= m.ptrFilas;}
+\DoxyCodeLine{00055     \}}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{00058 \}}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{\Hypertarget{matrizCSR_8cpp_source_l00060}\mbox{\hyperlink{classMatrizCSR_a8fb96ba3f3ae1e9d134d8165f8c4bf33}{00060}} \mbox{\hyperlink{classArray}{Array}} \mbox{\hyperlink{classMatrizCSR_a8fb96ba3f3ae1e9d134d8165f8c4bf33}{MatrizCSR::operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v)}
+\DoxyCodeLine{00061 \{}
+\DoxyCodeLine{00062     assert(v.\mbox{\hyperlink{classArray_a00b603f96f245b52895fabc160761ba3}{Tamanio}}()==this-\/>filas);}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \mbox{\hyperlink{classArray}{Array}} mul(v.\mbox{\hyperlink{classArray_a00b603f96f245b52895fabc160761ba3}{Tamanio}}());}
+\DoxyCodeLine{00065     \textcolor{keywordtype}{int} inicioFila, finFila;}
+\DoxyCodeLine{00066     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} suma;}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<this-\/>ptrFilas.size()-\/1; i++)}
+\DoxyCodeLine{00069     \{}
+\DoxyCodeLine{00070         inicioFila= this-\/>ptrFilas[i];}
+\DoxyCodeLine{00071         finFila= this-\/>ptrFilas[i+1];}
+\DoxyCodeLine{00072         suma= 0.0;}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=inicioFila; j<finFila; j++)}
+\DoxyCodeLine{00075             suma+= this-\/>valores[j]*v[this-\/>idColumnas[j]];}
+\DoxyCodeLine{00076             }
+\DoxyCodeLine{00077         mul[i]= suma;}
+\DoxyCodeLine{00078     \}    }
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080     \textcolor{keywordflow}{return} mul;}
+\DoxyCodeLine{00081 \}}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{\Hypertarget{matrizCSR_8cpp_source_l00083}\mbox{\hyperlink{classMatrizCSR_ae3bbfd15eb42115ff203ed69b79e7461}{00083}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classMatrizCSR_ae3bbfd15eb42115ff203ed69b79e7461}{MatrizCSR::Precondicionar}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v)}
+\DoxyCodeLine{00084 \{}
+\DoxyCodeLine{00085     assert(v.\mbox{\hyperlink{classArray_a00b603f96f245b52895fabc160761ba3}{Tamanio}}()==this-\/>filas);}
+\DoxyCodeLine{00086     }
+\DoxyCodeLine{00087     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<this-\/>ptrFilas.size()-\/1; i++)}
+\DoxyCodeLine{00088         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=this-\/>ptrFilas[i]; j<this-\/>ptrFilas[i+1]; j++)}
+\DoxyCodeLine{00089             this-\/>valores[j]*= v[this-\/>idColumnas[j]];     }
+\DoxyCodeLine{00090 \}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{\Hypertarget{matrizCSR_8cpp_source_l00092}\mbox{\hyperlink{classMatrizCSR_ad02f0810adcb6447dd745143d777fb2b}{00092}} \mbox{\hyperlink{classArray}{Array}} \mbox{\hyperlink{classMatrizCSR_ad02f0810adcb6447dd745143d777fb2b}{MatrizCSR::GetNoDiagonal}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00093 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00094     \mbox{\hyperlink{classArray}{Array}} d(this-\/>filas);}
+\DoxyCodeLine{00095     \textcolor{keywordtype}{bool} salir;}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<d.\mbox{\hyperlink{classArray_a00b603f96f245b52895fabc160761ba3}{Tamanio}}(); i++)}
+\DoxyCodeLine{00098     \{}
+\DoxyCodeLine{00099         salir= \textcolor{keyword}{false};}
+\DoxyCodeLine{00100         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=this-\/>ptrFilas[i]; j<this-\/>ptrFilas[i + 1] \&\& !salir; j++)}
+\DoxyCodeLine{00101             \textcolor{keywordflow}{if}(this-\/>idColumnas[j]==i)      }
+\DoxyCodeLine{00102             \{}
+\DoxyCodeLine{00103                 salir= \textcolor{keyword}{true};                                            }
+\DoxyCodeLine{00104                 d[i]= 1.0/this-\/>valores[j];}
+\DoxyCodeLine{00105             \}}
+\DoxyCodeLine{00106     \}}
+\DoxyCodeLine{00107     \textcolor{keywordflow}{return} d;}
+\DoxyCodeLine{00108 \}}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{\Hypertarget{matrizCSR_8cpp_source_l00110}\mbox{\hyperlink{classMatrizCSR_ac541b1a16bfac5a64b8cb31164679533}{00110}} \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}} \mbox{\hyperlink{classMatrizCSR_ac541b1a16bfac5a64b8cb31164679533}{MatrizCSR::GetDiagonalInvertida}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{00111 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00112     \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}} diagonal(this-\/>filas, this-\/>filas);   \textcolor{comment}{//Llamo al constructor por parametros dandole cómo entrada el número de filas, columnas y valores noNulos que presenta la diagonal de cualquier matriz con todos los elementos de la diagonal distintos de 0}}
+\DoxyCodeLine{00113     \textcolor{keywordtype}{bool} salir;}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115     diagonal.ptrFilas[0]= 0;}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<diagonal.filas; i++)}
+\DoxyCodeLine{00118     \{}
+\DoxyCodeLine{00119         \textcolor{comment}{//Al ser una matriz diagonal, las columnas se iran incrementando desde 0 hasta filas-\/1}}
+\DoxyCodeLine{00120         diagonal.idColumnas[i]= i;}
+\DoxyCodeLine{00121         \textcolor{comment}{//Al ser una matriz diagonal, sólo hay 1 elemento en cada fila por tanto se incrementa en 1 cada celda del vector}}
+\DoxyCodeLine{00122         diagonal.ptrFilas[i+1]= i+1;}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124         \textcolor{comment}{//Recorro la fila actual hasta dar con la celda que corresponde a la diagonal}}
+\DoxyCodeLine{00125         salir= \textcolor{keyword}{false};}
+\DoxyCodeLine{00126         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=this-\/>ptrFilas[i]; j<this-\/>ptrFilas[i + 1] \&\& !salir; j++)}
+\DoxyCodeLine{00127             \textcolor{keywordflow}{if}(this-\/>idColumnas[j]==i)      \textcolor{comment}{//El identificador de columna de cada fila debe coincidir con la fila}}
+\DoxyCodeLine{00128             \{}
+\DoxyCodeLine{00129                 salir= \textcolor{keyword}{true};                                \textcolor{comment}{//Dejamos de seguir buscando}}
+\DoxyCodeLine{00130 \textcolor{comment}{//                diagonal.valores.push\_back(1.0/this-\/>valores[j]);  //Al ser la inversa de la diagonal, el dato leido debe ser el inverso}}
+\DoxyCodeLine{00131                 diagonal.valores[i]= 1.0/this-\/>valores[j];}
+\DoxyCodeLine{00132             \}}
+\DoxyCodeLine{00133     \}}
+\DoxyCodeLine{00134     \textcolor{keywordflow}{return} diagonal;}
+\DoxyCodeLine{00135 \}}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{\Hypertarget{matrizCSR_8cpp_source_l00137}\mbox{\hyperlink{classMatrizCSR_a8c335e66b2b0a38cf6aabc3a5ac55be2}{00137}} istream\& operator>>(istream \&entrada, \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}} \&m)}
+\DoxyCodeLine{00138 \{}
+\DoxyCodeLine{00139     \textcolor{keywordtype}{string} linea1, linea2, aux;}
+\DoxyCodeLine{00140     \textcolor{keywordtype}{int} suma= 0, k= 1, valAux= 1, val;}
+\DoxyCodeLine{00141     \textcolor{keywordtype}{bool} primeraColumna, primeraLineaUtil;}
+\DoxyCodeLine{00142     \textcolor{keywordtype}{int} f, c, nn;}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144     \textcolor{comment}{//Nos saltamos las lineas con comentarios al principio del archivo}}
+\DoxyCodeLine{00145     primeraLineaUtil= \textcolor{keyword}{true};}
+\DoxyCodeLine{00146     \textcolor{keywordflow}{while}(getline(entrada, linea1) \&\& primeraLineaUtil)}
+\DoxyCodeLine{00147     \{}
+\DoxyCodeLine{00148         linea2= linea1;}
+\DoxyCodeLine{00149         \textcolor{keywordflow}{if}(linea1[0]!=\textcolor{charliteral}{'\%'})}
+\DoxyCodeLine{00150             primeraLineaUtil= \textcolor{keyword}{false};}
+\DoxyCodeLine{00151     \}}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153     \textcolor{comment}{//Leemos la primera linea util con el tamaño en filas, columnas y valores no nulos}}
+\DoxyCodeLine{00154     aux= \textcolor{stringliteral}{""};}
+\DoxyCodeLine{00155     primeraColumna= \textcolor{keyword}{true};}
+\DoxyCodeLine{00156     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<linea2.size(); i++)}
+\DoxyCodeLine{00157     \{}
+\DoxyCodeLine{00158         \textcolor{keywordflow}{if}(linea2[i]!=\textcolor{charliteral}{' '})}
+\DoxyCodeLine{00159             aux+= linea2[i];}
+\DoxyCodeLine{00160         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00161         \{}
+\DoxyCodeLine{00162             \textcolor{keywordflow}{if} (primeraColumna)}
+\DoxyCodeLine{00163             \{}
+\DoxyCodeLine{00164                 f= stoi(aux);}
+\DoxyCodeLine{00165                 primeraColumna= \textcolor{keyword}{false};}
+\DoxyCodeLine{00166             \}}
+\DoxyCodeLine{00167             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00168                 c= stoi(aux);                                        }
+\DoxyCodeLine{00169 }
+\DoxyCodeLine{00170             aux= \textcolor{stringliteral}{""};}
+\DoxyCodeLine{00171         \}}
+\DoxyCodeLine{00172     \}}
+\DoxyCodeLine{00173     nn= stoi(aux);}
+\DoxyCodeLine{00174    }
+\DoxyCodeLine{00175     \textcolor{comment}{//Dimensionamos los vectores ahora que sabemos el tamaño e inicializamos la primera posicion del vec. ptrFilas a 0 }}
+\DoxyCodeLine{00176     m= \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}}(f, nn);}
+\DoxyCodeLine{00177     k= 0;}
+\DoxyCodeLine{00178     m.ptrFilas[k++]= 0;}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180     \textcolor{comment}{//Leemos las lineas restantes del archivo e inicializamos los vectores}}
+\DoxyCodeLine{00181     suma= 0;}
+\DoxyCodeLine{00182     valAux= 1;}
+\DoxyCodeLine{00183     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<m.noNulos; i++)}
+\DoxyCodeLine{00184     \{}
+\DoxyCodeLine{00185         primeraColumna= \textcolor{keyword}{true};}
+\DoxyCodeLine{00186         aux= \textcolor{stringliteral}{""};}
+\DoxyCodeLine{00187 }
+\DoxyCodeLine{00188         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0; j<linea1.size(); j++)}
+\DoxyCodeLine{00189         \{}
+\DoxyCodeLine{00190             \textcolor{keywordflow}{if}(linea1[j]!=\textcolor{charliteral}{' '})}
+\DoxyCodeLine{00191                 aux+= linea1[j];}
+\DoxyCodeLine{00192             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(aux!=\textcolor{stringliteral}{""})}
+\DoxyCodeLine{00193             \{}
+\DoxyCodeLine{00194                 \textcolor{keywordflow}{if} (primeraColumna)                                 \textcolor{comment}{//Si se cumple, leemos la fila}}
+\DoxyCodeLine{00195                 \{}
+\DoxyCodeLine{00196                     val= stoi(aux);                        \textcolor{comment}{//Leemos la posicion en la fila}}
+\DoxyCodeLine{00197 }
+\DoxyCodeLine{00198                     \textcolor{keywordflow}{if}(valAux!=val)                                 \textcolor{comment}{//Si la fila es distinta a la anterior}}
+\DoxyCodeLine{00199                         k++;                                        \textcolor{comment}{//Incrementamos la posicion del vector ptrFIlas para escribir}}
+\DoxyCodeLine{00200                     }
+\DoxyCodeLine{00201                     m.ptrFilas[k]= ++suma;                          \textcolor{comment}{//Incrementamos siempre con cada fila que leemos, el valor final de suma es igual a m.noNulos}}
+\DoxyCodeLine{00202                     valAux= val;}
+\DoxyCodeLine{00203                     primeraColumna= \textcolor{keyword}{false};}
+\DoxyCodeLine{00204                 \}}
+\DoxyCodeLine{00205                 \textcolor{keywordflow}{else}                                                \textcolor{comment}{//Si se cumple, leemos la columna}}
+\DoxyCodeLine{00206                     m.idColumnas[i]= stoi(aux) -\/ 1;}
+\DoxyCodeLine{00207                         }
+\DoxyCodeLine{00208                 aux= \textcolor{stringliteral}{""};}
+\DoxyCodeLine{00209             \}}
+\DoxyCodeLine{00210         \}}
+\DoxyCodeLine{00211         m.valores[i]= stold(aux);                    \textcolor{comment}{//Leemos el valor asociado a la fila y columna correspondiente                    }}
+\DoxyCodeLine{00212 }
+\DoxyCodeLine{00213         getline(entrada, linea1);                                   \textcolor{comment}{//Saltamos a la siguiente linea del archivo}}
+\DoxyCodeLine{00214     \}}
+\DoxyCodeLine{00215 }
+\DoxyCodeLine{00216     \textcolor{keywordflow}{return} entrada;}
+\DoxyCodeLine{00217 \}}
+\DoxyCodeLine{00218 }
+\DoxyCodeLine{\Hypertarget{matrizCSR_8cpp_source_l00219}\mbox{\hyperlink{classMatrizCSR_a15d4a3e9849d032b8fcce8e20acd1e18}{00219}} ostream\& operator<<(ostream \&salida,  \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}} \&m)}
+\DoxyCodeLine{00220 \{}
+\DoxyCodeLine{00221     \textcolor{keywordtype}{int} inicio, fin;}
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00223     salida << m.filas << \textcolor{stringliteral}{" "} << m.filas << \textcolor{stringliteral}{" "} << m.noNulos << endl;}
+\DoxyCodeLine{00224 }
+\DoxyCodeLine{00225     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<m.filas+1; i++)}
+\DoxyCodeLine{00226     \{}
+\DoxyCodeLine{00227         inicio= m.ptrFilas[i];}
+\DoxyCodeLine{00228         fin= m.ptrFilas[i+1];}
+\DoxyCodeLine{00229 }
+\DoxyCodeLine{00230         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=inicio; j<fin; j++)}
+\DoxyCodeLine{00231             salida << i << \textcolor{stringliteral}{" "} << m.idColumnas[j] << \textcolor{stringliteral}{" "} << m.valores[j] << endl;}
+\DoxyCodeLine{00232     \}}
+\DoxyCodeLine{00233     }
+\DoxyCodeLine{00234     \textcolor{keywordflow}{return} salida;}
+\DoxyCodeLine{00235 \}}
+
+\end{DoxyCode}

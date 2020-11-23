@@ -1,0 +1,7 @@
+<map id="include/array.h" name="include/array.h">
+<area shape="rect" id="node1" title="Archivo de cabecera de la clase Array Vector abstracto para datos grande. Esta clase se usa para alma..." alt="" coords="117,5,234,32"/>
+<area shape="rect" id="node2" href="$matrizCSR_8h.html" title="Archivo de cabecera de la clase MatrizCSR Implementación abstracta de una matriz en formato CSR apta ..." alt="" coords="99,80,252,107"/>
+<area shape="rect" id="node3" href="$jacobi_8cpp.html" title="Código en C++ que resuelve el algoritmo de Jacobi para sistemas lineales." alt="" coords="5,155,116,181"/>
+<area shape="rect" id="node5" href="$array_8cpp_source.html" title=" " alt="" coords="277,80,381,107"/>
+<area shape="rect" id="node4" href="$matrizCSR_8cpp_source.html" title=" " alt="" coords="140,155,280,181"/>
+</map>

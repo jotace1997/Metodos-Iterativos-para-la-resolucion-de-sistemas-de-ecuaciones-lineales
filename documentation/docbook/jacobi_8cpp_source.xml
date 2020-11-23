@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_jacobi_8cpp_source">
+<title>jacobi.cpp</title>
+<indexterm><primary>src/jacobi.cpp</primary></indexterm>
+<programlisting>00001 
+00027 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00028 <emphasis role="preprocessor">#include&#32;&quot;../include/matrizCSR.h&quot;</emphasis>&#32;&#32;&#32;
+00029 <emphasis role="preprocessor">#include&#32;&quot;../include/array.h&quot;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00030 <emphasis role="preprocessor">#include&#32;&lt;fstream&gt;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00031 <emphasis role="preprocessor">#include&#32;&lt;sys/time.h&gt;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00033 <emphasis role="keyword">using&#32;namespace&#32;</emphasis>std;
+00034 
+00035 <emphasis role="keywordtype">int</emphasis>&#32;main(<emphasis role="keywordtype">int</emphasis>&#32;argc,&#32;<emphasis role="keywordtype">char</emphasis>&#32;**argv)
+00036 {
+00037 &#32;&#32;&#32;&#32;<link linkend="_classMatrizCSR">MatrizCSR</link>&#32;A,&#32;noD;
+00038 &#32;&#32;&#32;&#32;<link linkend="_classArray">Array</link>&#32;b,&#32;aux,&#32;x0,&#32;x1,&#32;aux1,&#32;P;
+00039 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;tolerancia,&#32;e;
+00040 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;salir=<emphasis role="keyword">false</emphasis>,&#32;precondicionar=0;
+00041 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;iteraciones=0;
+00042 &#32;&#32;&#32;&#32;ifstream&#32;datosMatriz,&#32;datosVector;
+00043 &#32;&#32;&#32;&#32;ofstream&#32;solucionVector;
+00044 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;coeficientes,&#32;vectorDerecho,&#32;aproximacionInicial;
+00045 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis>timeval&#32;t0,&#32;t1;
+00046 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;tiempo;
+00047 
+00048 &#32;&#32;&#32;&#32;datosMatriz.open(argv[1]);
+00049 &#32;&#32;&#32;&#32;datosMatriz&#32;&gt;&gt;&#32;A;
+00050 &#32;&#32;&#32;&#32;datosMatriz.close();
+00051 
+00052 &#32;&#32;&#32;&#32;datosVector.open(argv[2]);
+00053 &#32;&#32;&#32;&#32;datosVector&#32;&gt;&gt;&#32;b;
+00054 &#32;&#32;&#32;&#32;datosVector.close();
+00055 
+00056 &#32;&#32;&#32;&#32;datosVector.open(argv[3]);
+00057 &#32;&#32;&#32;&#32;datosVector&#32;&gt;&gt;&#32;x0;
+00058 &#32;&#32;&#32;&#32;datosVector.close();
+00059 
+00060 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Umbral&#32;de&#32;error:&#32;&quot;</emphasis>;
+00061 &#32;&#32;&#32;&#32;cin&#32;&gt;&gt;&#32;e;
+00062 
+00063 &#32;&#32;&#32;&#32;gettimeofday(&amp;t0,&#32;NULL);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00064 
+00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;noD=&#32;A.<link linkend="_classMatrizCSR_1ac541b1a16bfac5a64b8cb31164679533">GetDiagonalInvertida</link>();&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tolerancia=&#32;e*b.NormaInfinito();&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;iteraciones=&#32;0;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00068 
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">do</emphasis>
+00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;&#32;&#32;&#32;&#32;
+00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;aux=&#32;b&#32;-&#32;A*x0;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x1=&#32;x0&#32;+&#32;noD*aux;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00073 
+00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(aux.NormaInfinito()&lt;tolerancia)&#32;&#32;&#32;
+00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;salir=&#32;<emphasis role="keyword">true</emphasis>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;x0=&#32;x1;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00078 
+00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;iteraciones++;
+00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">while</emphasis>&#32;(!salir);
+00081 &#32;&#32;&#32;&#32;gettimeofday(&amp;t1,&#32;NULL);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00082 
+00083 &#32;&#32;&#32;&#32;tiempo&#32;=&#32;((t1.tv_sec&#32;&#32;-&#32;t0.tv_sec)*1000000u&#32;+&#32;t1.tv_usec&#32;-&#32;t0.tv_usec)/1.e6;
+00084 
+00085 &#32;&#32;&#32;&#32;solucionVector.open(<emphasis role="stringliteral">&quot;solucion.dat&quot;</emphasis>);
+00086 &#32;&#32;&#32;&#32;solucionVector&#32;&lt;&lt;&#32;x0;
+00087 &#32;&#32;&#32;&#32;solucionVector.close();&#32;
+00088 
+00089 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\n\n&gt;&#32;METODO&#32;DE&#32;JACOBI:&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+00090 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t&gt;&#32;Fichero&#32;de&#32;datos:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;argv[1]&#32;&lt;&lt;&#32;endl;
+00091 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t&gt;&#32;Umbral&#32;de&#32;error:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e&#32;&lt;&lt;&#32;endl;
+00092 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t&gt;&#32;Iteraciones:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;iteraciones&#32;&lt;&lt;&#32;endl;
+00093 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t&gt;&#32;Tiempo:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;tiempo&#32;&lt;&lt;&#32;endl;
+00094 }
+</programlisting></section>

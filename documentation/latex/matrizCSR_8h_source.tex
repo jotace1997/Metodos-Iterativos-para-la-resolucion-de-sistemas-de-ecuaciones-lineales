@@ -1,0 +1,49 @@
+\hypertarget{matrizCSR_8h_source}{}\doxysection{matriz\+C\+S\+R.\+h}
+\label{matrizCSR_8h_source}\index{include/matrizCSR.h@{include/matrizCSR.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#ifndef \_MATRIZ\_CSR\_H}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#define \_MATRIZ\_CSR\_H}}
+\DoxyCodeLine{00003 }
+\DoxyCodeLine{00004 \textcolor{preprocessor}{\#include <vector>}       }
+\DoxyCodeLine{00005 \textcolor{preprocessor}{\#include <fstream>}      }
+\DoxyCodeLine{00006 \textcolor{preprocessor}{\#include <assert.h>}     }
+\DoxyCodeLine{00007 \textcolor{preprocessor}{\#include "\mbox{\hyperlink{array_8h}{array.h}}"}      }
+\DoxyCodeLine{00009 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{\Hypertarget{matrizCSR_8h_source_l00019}\mbox{\hyperlink{classMatrizCSR}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{classMatrizCSR}{MatrizCSR}}}
+\DoxyCodeLine{00020 \{}
+\DoxyCodeLine{00021     \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022         \textcolor{keywordtype}{int} filas;                  }
+\DoxyCodeLine{00023         \textcolor{keywordtype}{int} noNulos;                }
+\DoxyCodeLine{00025         \mbox{\hyperlink{classArray}{Array}} valores;              }
+\DoxyCodeLine{00026         vector<int> idColumnas;     }
+\DoxyCodeLine{00027         vector<int> ptrFilas;       }
+\DoxyCodeLine{00029     \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040         \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}}();                                                    }
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00046         \string~\mbox{\hyperlink{classMatrizCSR}{MatrizCSR}}();                                                   }
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00066         \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}}(\textcolor{keywordtype}{int} f, \textcolor{keywordtype}{int} nn);                                }
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00083         \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}}(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}} \&m);                                        }
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00101         \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}} \&m);                       }
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00130         \mbox{\hyperlink{classArray}{Array}} operator*(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v);                           }
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00146         \textcolor{keywordtype}{int} GetFilas() \textcolor{keyword}{const};                     }
+\DoxyCodeLine{00147         }
+\DoxyCodeLine{00165         \mbox{\hyperlink{classArray}{Array}} GetNoDiagonal() \textcolor{keyword}{const};  }
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00184         \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}} GetDiagonalInvertida() \textcolor{keyword}{const};                        }
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00207         \textcolor{keywordtype}{void} Precondicionar(\textcolor{keyword}{const} \mbox{\hyperlink{classArray}{Array}} \&v);               }
+\DoxyCodeLine{00208 }
+\DoxyCodeLine{00234         \textcolor{keyword}{friend} istream\& operator>>(istream \&entrada, \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}} \&m); }
+\DoxyCodeLine{00235 }
+\DoxyCodeLine{00261         \textcolor{keyword}{friend} ostream\& operator<<(ostream \&salida,  \mbox{\hyperlink{classMatrizCSR}{MatrizCSR}} \&m);}
+\DoxyCodeLine{00262 \};}
+\DoxyCodeLine{00263 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

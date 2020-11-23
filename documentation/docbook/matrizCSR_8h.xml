@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_matrizCSR_8h">
+<title>Referencia del Archivo include/matrizCSR.h</title>
+<indexterm><primary>include/matrizCSR.h</primary></indexterm>
+<para>
+
+<para>Archivo de cabecera de la clase <link linkend="_classMatrizCSR">MatrizCSR</link> Implementación abstracta de una matriz en formato CSR apta para almacenar matrices dispersas. 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+ 
+</para>
+<programlisting>#include &lt;vector&gt;
+#include &lt;fstream&gt;
+#include &lt;assert.h&gt;
+#include &quot;array.h&quot;
+</programlisting>Dependencia gráfica adjunta para matrizCSR.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="matrizCSR_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="matrizCSR_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Clases    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classMatrizCSR">MatrizCSR</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+
+<para>Archivo de cabecera de la clase <link linkend="_classMatrizCSR">MatrizCSR</link> Implementación abstracta de una matriz en formato CSR apta para almacenar matrices dispersas. 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+
+<para><formalpara><title>Autor</title>
+
+<para>Juan Carlos Sánchez Cara </para>
+</formalpara>
+<formalpara><title>Fecha</title>
+
+<para>20/11/20 </para>
+</formalpara>
+</para>
+<para>
+Definición en el archivo <link linkend="_matrizCSR_8h_source">matrizCSR.h</link>.</para>
+</section>
+</section>

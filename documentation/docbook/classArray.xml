@@ -1,0 +1,864 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classArray">
+<title>Referencia de la Clase Array</title>
+<indexterm><primary>Array</primary></indexterm>
+Diagrama de colaboración para Array:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classArray__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Métodos públicos    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classArray_1ae20b3dbb4aa6083679c0dea835abd861">Array</link> ()</para>
+
+<para>Contructor por defecto 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</listitem>
+            <listitem><para><link linkend="_classArray_1abcabe567f41f7798d2f97babcc443c6f">~Array</link> ()</para>
+
+<para>Destructor 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</listitem>
+            <listitem><para><link linkend="_classArray_1a81da5e767429d41a9ebbe2322fdde153">Array</link> (const int n)</para>
+
+<para>Constructor por parámetros. </para>
+</listitem>
+            <listitem><para><link linkend="_classArray_1ac97f0bf69ad133fde251c61a9ef664c0">Array</link> (const int n, const long double f)</para>
+
+<para>Constructor por parametros. </para>
+</listitem>
+            <listitem><para><link linkend="_classArray_1a83cdab5f5e4be15373f0e98d93602c57">Array</link> (const vector&lt; long double &gt; &amp;v)</para>
+
+<para>Constructor por parametros. </para>
+</listitem>
+            <listitem><para><link linkend="_classArray_1ad892c4e8cf8761c3940fff5110113986">Array</link> (const <link linkend="_classArray">Array</link> &amp;v)</para>
+
+<para>Constructor de copia. </para>
+</listitem>
+            <listitem><para><link linkend="_classArray">Array</link> &amp; <link linkend="_classArray_1a65de238299b3f3ee0d9ea2c782a40d26">operator=</link> (const <link linkend="_classArray">Array</link> &amp;v)</para>
+
+<para>Operador de igualdad. </para>
+</listitem>
+            <listitem><para><link linkend="_classArray">Array</link> <link linkend="_classArray_1a69a6cda22a2884a8d3a3fd3d098bd07b">operator+</link> (const <link linkend="_classArray">Array</link> &amp;v)</para>
+
+<para>Operador Suma. </para>
+</listitem>
+            <listitem><para><link linkend="_classArray">Array</link> <link linkend="_classArray_1ab2596757c9d351c191cc4a07f7257824">operator-</link> (const <link linkend="_classArray">Array</link> &amp;v)</para>
+
+<para>Operador Resta. </para>
+</listitem>
+            <listitem><para><link linkend="_classArray">Array</link> <link linkend="_classArray_1a989ea1342a0b2baed60d97e666bd3fee">operator*</link> (const <link linkend="_classArray">Array</link> &amp;v)</para>
+
+<para>Operador Producto. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_classArray_1af69e814b6b38cfa766d88b033ffd9ea6">operator==</link> (const <link linkend="_classArray">Array</link> &amp;v)</para>
+
+<para>Operador Comparación. </para>
+</listitem>
+            <listitem><para>long double <link linkend="_classArray_1a906e5b658323cee060cc0243cfc93b62">operator[]</link> (int i) const</para>
+
+<para>Operador de Indexacion Constante. </para>
+</listitem>
+            <listitem><para>long double &amp; <link linkend="_classArray_1a10670c5a12d87fbb212246b6fce418e4">operator[]</link> (int i)</para>
+
+<para>Operador de Indexacion. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classArray_1a00b603f96f245b52895fabc160761ba3">Tamanio</link> () const</para>
+
+<para>Get Tamaño. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classArray_1a360569587fdf350f6397521b7fa1d506">Limpiar</link> ()</para>
+
+<para>Elimina todos los elementos del vector. </para>
+</listitem>
+            <listitem><para>long double <link linkend="_classArray_1a69abad4a15c5ab1f3a07578d6e33a044">NormaInfinito</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Amigas    </title>
+        <itemizedlist>
+            <listitem><para>istream &amp; <link linkend="_classArray_1ac08d1f04ff1addddc1b356432c636765">operator&gt;&gt;</link> (istream &amp;entrada, <link linkend="_classArray">Array</link> &amp;v)</para>
+
+<para>Sobrecarga del operador &gt;&gt; (cin). </para>
+</listitem>
+            <listitem><para>ostream &amp; <link linkend="_classArray_1a92526b895e0f8a3d801d0d4a2e3e186d">operator&lt;&lt;</link> (ostream &amp;salida, <link linkend="_classArray">Array</link> &amp;v)</para>
+
+<para>Sobrecarga del operador &lt;&lt; (cout). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<para>
+Definición en la línea <link linkend="_array_8h_source_1l00021">21</link> del archivo <link linkend="_array_8h_source">array.h</link>.</para>
+</section>
+<section>
+<title>Documentación del constructor y destructor</title>
+<anchor xml:id="_classArray_1ae20b3dbb4aa6083679c0dea835abd861"/>    <section>
+    <title>Array()<computeroutput>[1/5]</computeroutput></title>
+<indexterm><primary>Array</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>Array</secondary></indexterm>
+<para><computeroutput>Array::Array ( )</computeroutput></para><para>
+
+<para>Contructor por defecto 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</para>
+
+<para>No hacenada ya que de la reserva de memoria se encarga la biblioteca &lt;vector&gt; <literallayout><computeroutput> int main()
+ {
+     Array v;
+ }
+</computeroutput></literallayout> </para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00005">5</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1abcabe567f41f7798d2f97babcc443c6f"/>    <section>
+    <title>~Array()</title>
+<indexterm><primary>~Array</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>~Array</secondary></indexterm>
+<para><computeroutput>Array::~Array ( )</computeroutput></para><para>
+
+<para>Destructor 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</para>
+
+<para>No hacenada ya que de la liberación de memoria se encarga la biblioteca &lt;vector&gt; </para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00010">10</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1a81da5e767429d41a9ebbe2322fdde153"/>    <section>
+    <title>Array()<computeroutput>[2/5]</computeroutput></title>
+<indexterm><primary>Array</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>Array</secondary></indexterm>
+<para><computeroutput>Array::Array (const int n)</computeroutput></para><para>
+
+<para>Constructor por parámetros. </para>
+</para>
+
+<para>Reserva un vector de tamaño n. 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>argumento entero. 
+<literallayout>&#160;&#xa;</literallayout>
+ <literallayout><computeroutput> int main()
+ {
+     int n;
+     Array v;
+
+     cout &lt;&lt; &quot;Tamaño del vector:&quot;;
+     cin &gt;&gt; n;
+
+     v= Array(n);
+ }
+</computeroutput></literallayout> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00015">15</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1ac97f0bf69ad133fde251c61a9ef664c0"/>    <section>
+    <title>Array()<computeroutput>[3/5]</computeroutput></title>
+<indexterm><primary>Array</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>Array</secondary></indexterm>
+<para><computeroutput>Array::Array (const int n, const long double f)</computeroutput></para><para>
+
+<para>Constructor por parametros. </para>
+</para>
+
+<para>Reserva un vector de tamaño n e inicializa todas las celdas a f 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>n</entry>
+                                <entry>
+<para>argumento entero </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>f</entry>
+                                <entry>
+<para>argumento long double <literallayout><computeroutput> int main()
+ {
+     int n;
+     long double l;
+     Array v;
+
+     cout &lt;&lt; &quot;Tamaño del vector: &quot;;
+     cin &gt;&gt; n;
+     cout &lt;&lt; &quot;Valor de inicialización: &quot;;
+     cin &gt;&gt; l;
+
+     v= Array(n, l);
+ }
+</computeroutput></literallayout> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00020">20</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1a83cdab5f5e4be15373f0e98d93602c57"/>    <section>
+    <title>Array()<computeroutput>[4/5]</computeroutput></title>
+<indexterm><primary>Array</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>Array</secondary></indexterm>
+<para><computeroutput>Array::Array (const vector&lt; long double &gt; &amp; v)</computeroutput></para><para>
+
+<para>Constructor por parametros. </para>
+</para>
+
+<para>Convierte un vector &lt;long double&gt; en un <link linkend="_classArray">Array</link> 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>Un</entry>
+                                <entry>
+<para>vector constante de la STL pasado por referencia <literallayout><computeroutput> int main()
+ {
+     vector &lt;long double&gt; auxiliar;
+     Array v;
+     
+     //Trabajamos con el vector auxiliar...
+
+     v= Array(auxiliar);
+ }
+</computeroutput></literallayout> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00025">25</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1ad892c4e8cf8761c3940fff5110113986"/>    <section>
+    <title>Array()<computeroutput>[5/5]</computeroutput></title>
+<indexterm><primary>Array</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>Array</secondary></indexterm>
+<para><computeroutput>Array::Array (const <link linkend="_classArray">Array</link> &amp; v)</computeroutput></para><para>
+
+<para>Constructor de copia. </para>
+</para>
+
+<para>Crea un <link linkend="_classArray">Array</link> exactamente igual que el pasado por parametro 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para><link linkend="_classArray">Array</link> constante pasado por referencia <literallayout><computeroutput> int main()
+ {
+     Array a, b;
+     
+     //Trabajamos con a...
+
+     b= Array(a);
+ }
+</computeroutput></literallayout> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Documentación de las funciones miembro</title>
+<anchor xml:id="_classArray_1a360569587fdf350f6397521b7fa1d506"/>    <section>
+    <title>Limpiar()</title>
+<indexterm><primary>Limpiar</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>Limpiar</secondary></indexterm>
+<para><computeroutput>void Array::Limpiar ( )</computeroutput></para><para>
+
+<para>Elimina todos los elementos del vector. </para>
+</para>
+
+<para><literallayout><computeroutput> int main()
+ {
+     Array a;
+     
+     cin &gt;&gt; a;
+
+     //Trabajo con los datos de a...
+
+     a.Limpiar();
+
+     //Ahora puedo volver a rellenar el vector con otros datos
+
+ }
+</computeroutput></literallayout> </para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00106">106</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+Gráfico de llamadas a esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classArray_a360569587fdf350f6397521b7fa1d506_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classArray_1a69abad4a15c5ab1f3a07578d6e33a044"/>    <section>
+    <title>NormaInfinito()</title>
+<indexterm><primary>NormaInfinito</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>NormaInfinito</secondary></indexterm>
+<para><computeroutput>long double Array::NormaInfinito ( )</computeroutput></para>
+<para>El método busca el valor absoluto más alto en el vector. <formalpara><title>Devuelve</title>
+
+<para>El valor basoluto (long double) más alto. <literallayout><computeroutput> int main()
+ {
+     Array a;
+     int n;
+     
+     cin &gt;&gt; a;
+
+     cout &lt;&lt; &quot;El máximo del vector es: &quot; &lt;&lt; a.NormaInfinito() &lt;&lt; endl;
+ }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00111">111</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1a989ea1342a0b2baed60d97e666bd3fee"/>    <section>
+    <title>operator*()</title>
+<indexterm><primary>operator*</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>operator*</secondary></indexterm>
+<para><computeroutput><link linkend="_classArray">Array</link> Array::operator* (const <link linkend="_classArray">Array</link> &amp; v)</computeroutput></para><para>
+
+<para>Operador Producto. </para>
+</para>
+
+<para>El método comprueba que ambos <link linkend="_classArray">Array</link> tengan el mismo tamaño y crea otro <link linkend="_classArray">Array</link> del mismo tamaño con el producto componente a componente de cada <link linkend="_classArray">Array</link>. 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para><link linkend="_classArray">Array</link> constante pasado por referencia. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Devuelve</title>
+
+<para>Un <link linkend="_classArray">Array</link> con la suma de ambos vectores elemento a elemento. <literallayout><computeroutput> int main()
+ {
+     Array a, b, c;
+     
+     cin &gt;&gt; a;
+     cin &gt;&gt; b;
+     
+     c= a*b;
+ }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00062">62</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1a69a6cda22a2884a8d3a3fd3d098bd07b"/>    <section>
+    <title>operator+()</title>
+<indexterm><primary>operator+</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>operator+</secondary></indexterm>
+<para><computeroutput><link linkend="_classArray">Array</link> Array::operator+ (const <link linkend="_classArray">Array</link> &amp; v)</computeroutput></para><para>
+
+<para>Operador Suma. </para>
+</para>
+
+<para>El método comprueba que ambos <link linkend="_classArray">Array</link> tengan el mismo tamaño y crea otro <link linkend="_classArray">Array</link> del mismo tamaño con la suma componente a componente de cada <link linkend="_classArray">Array</link> 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para><link linkend="_classArray">Array</link> constante pasado por referencia </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Devuelve</title>
+
+<para>Un <link linkend="_classArray">Array</link> con la suma de ambos vectores elemento a elemento. <literallayout><computeroutput> int main()
+ {
+     Array a, b, c;
+     
+     cin &gt;&gt; a;
+     cin &gt;&gt; b;
+     
+     c= a + b;
+ }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00038">38</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1ab2596757c9d351c191cc4a07f7257824"/>    <section>
+    <title>operator-()</title>
+<indexterm><primary>operator-</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>operator-</secondary></indexterm>
+<para><computeroutput><link linkend="_classArray">Array</link> Array::operator- (const <link linkend="_classArray">Array</link> &amp; v)</computeroutput></para><para>
+
+<para>Operador Resta. </para>
+</para>
+
+<para>El método comprueba que ambos <link linkend="_classArray">Array</link> tengan el mismo tamaño y crea otro <link linkend="_classArray">Array</link> del mismo tamaño con la resta componente a componente de cada <link linkend="_classArray">Array</link> 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para><link linkend="_classArray">Array</link> constante pasado por referencia </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Devuelve</title>
+
+<para>Un <link linkend="_classArray">Array</link> con la resta de ambos vectores elemento a elemento. <literallayout><computeroutput> int main()
+ {
+     Array a, b, c;
+     
+     cin &gt;&gt; a;
+     cin &gt;&gt; b;
+     
+     c= a - b;
+ }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00050">50</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1a65de238299b3f3ee0d9ea2c782a40d26"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classArray">Array</link> &amp; Array::operator= (const <link linkend="_classArray">Array</link> &amp; v)</computeroutput></para><para>
+
+<para>Operador de igualdad. </para>
+</para>
+
+<para>Iguala un <link linkend="_classArray">Array</link> a otro (this= v) 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para><link linkend="_classArray">Array</link> constante pasado por referencia </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Devuelve</title>
+
+<para>Un <link linkend="_classArray">Array</link> exactamente igual que el pasado por parametro <literallayout><computeroutput> int main()
+ {
+     Array a, b;
+     
+     cin &gt;&gt; a;
+
+     b= a;
+ }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00030">30</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1af69e814b6b38cfa766d88b033ffd9ea6"/>    <section>
+    <title>operator==()</title>
+<indexterm><primary>operator==</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>operator==</secondary></indexterm>
+<para><computeroutput>bool Array::operator== (const <link linkend="_classArray">Array</link> &amp; v)</computeroutput></para><para>
+
+<para>Operador Comparación. </para>
+</para>
+
+<para>El método comprueba que ambos <link linkend="_classArray">Array</link> tengan el mismo tamaño y que cada componente sea igual. 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para><link linkend="_classArray">Array</link> constante pasado por referencia. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Devuelve</title>
+
+<para>TRUE si ambos <link linkend="_classArray">Array</link> son iguales, FALSE en otro caso. <literallayout><computeroutput> int main()
+ {
+     Array a, b;
+     
+     cin &gt;&gt; a;
+     cin &gt;&gt; b;
+     
+     if(a==b)
+         cout &lt;&lt; &quot;Los dos Arrays son iguales.&quot; &lt;&lt; endl;
+     else
+         cout &lt;&lt; &quot;Son distintos.&quot; &lt;&lt; endl;
+ }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00074">74</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1a10670c5a12d87fbb212246b6fce418e4"/>    <section>
+    <title>operator[]()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>operator[]</secondary></indexterm>
+<para><computeroutput>long double &amp; Array::operator[] (int i)</computeroutput></para><para>
+
+<para>Operador de Indexacion. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>Entero para indexar el vector. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Devuelve</title>
+
+<para>El valor correspondiente a i para variables constantes. <literallayout><computeroutput> int main()
+ {
+     Array a;
+     int n;
+     
+     cout &lt;&lt; &quot;Tamaño: &quot;
+     cin &gt;&gt; n;
+     
+     a= Array(n);
+
+     for(int i=0; i&lt;n; i++)
+         cin &gt;&gt; a[i];
+
+     for(int i=0; i&lt;n; i++)
+         cout &lt;&lt; a[i] &lt;&lt; &quot; &quot;;
+ }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00094">94</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1a906e5b658323cee060cc0243cfc93b62"/>    <section>
+    <title>operator[]()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>operator[]</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>operator[]</secondary></indexterm>
+<para><computeroutput>long double Array::operator[] (int i) const</computeroutput></para><para>
+
+<para>Operador de Indexacion Constante. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>Entero para indexar el vector. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Devuelve</title>
+
+<para>El valor correspondiente a i para variables constantes. <literallayout><computeroutput> int main()
+ {
+     Array a;
+     int n;
+    
+     cout &lt;&lt; &quot;Tamaño: &quot;
+     cin &gt;&gt; n;
+     
+     a= Array(n);
+
+     for(int i=0; i&lt;n; i++)
+         cin &gt;&gt; a[i];
+ }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00087">87</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1a00b603f96f245b52895fabc160761ba3"/>    <section>
+    <title>Tamanio()</title>
+<indexterm><primary>Tamanio</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>Tamanio</secondary></indexterm>
+<para><computeroutput>int Array::Tamanio ( ) const</computeroutput></para><para>
+
+<para>Get Tamaño. </para>
+</para>
+
+<para><formalpara><title>Devuelve</title>
+
+<para>Devuelve el tamaño del vector. <literallayout><computeroutput> int main()
+ {
+     Array a;
+     int n;
+     
+     cin &gt;&gt; a;
+
+     n= a.Tamanio();
+
+     cout &lt;&lt; &quot;El array tiene &quot; &lt;&lt; n &lt;&lt; &quot; elementos&quot; &lt;&lt; endl;
+ }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00101">101</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+Gráfico de llamadas a esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classArray_a00b603f96f245b52895fabc160761ba3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Documentación de las funciones relacionadas y clases amigas</title>
+<anchor xml:id="_classArray_1a92526b895e0f8a3d801d0d4a2e3e186d"/>    <section>
+    <title>operator&lt;&lt;</title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>ostream&amp; operator&lt;&lt; (ostream &amp; salida, <link linkend="_classArray">Array</link> &amp; v)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Sobrecarga del operador &lt;&lt; (cout). </para>
+</para>
+
+<para>El método escribe una serie de números (1 por línea). 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>salida</entry>
+                                <entry>
+<para>Flujo de salida. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para><link linkend="_classArray">Array</link> para obtener los datos. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Devuelve</title>
+
+<para>Flujo de salida. <literallayout><computeroutput> int main(int argc, char **argv[])
+ {
+     Array a;
+     ifstream datosMatriz;
+     ofstream datosSalida;
+
+     datosMatriz.open(argv[1]);
+     datosMatriz &gt;&gt; a;
+     datosMatriz.close();
+
+     //Trabajamos con a...
+
+     datosSalida.open(&quot;solucion.dat&quot;);
+     datosSalida &lt;&lt; a;
+     datosSalida.close(); 
+ }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00134">134</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+    </section><anchor xml:id="_classArray_1ac08d1f04ff1addddc1b356432c636765"/>    <section>
+    <title>operator&gt;&gt;</title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>Array</secondary></indexterm>
+<indexterm><primary>Array</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>istream&amp; operator&gt;&gt; (istream &amp; entrada, <link linkend="_classArray">Array</link> &amp; v)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Sobrecarga del operador &gt;&gt; (cin). </para>
+</para>
+
+<para>El método lee una serie de números (1 por línea), los convierte a long double y los guarda en el mismo orden en el vector datos. 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>entrada</entry>
+                                <entry>
+<para>Flujo de entrada. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para><link linkend="_classArray">Array</link> para guardar los datos. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Devuelve</title>
+
+<para>Flujo de entrada. <literallayout><computeroutput> int main(int argc, char **argv[])
+ {
+     Array a;
+     ifstream datosMatriz;
+
+     datosMatriz.open(argv[1]);
+     datosMatriz &gt;&gt; a;
+     datosMatriz.close();
+ }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_array_8cpp_source_1l00124">124</link> del archivo <link linkend="_array_8cpp_source">array.cpp</link>.</para>
+</section>
+<para>
+La documentación para esta clase fue generada a partir de los siguientes ficheros:</para>
+include/<link linkend="_array_8h">array.h</link>src/array.cpp</section>
+</section>

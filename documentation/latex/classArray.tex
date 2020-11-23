@@ -1,0 +1,628 @@
+\hypertarget{classArray}{}\doxysection{Referencia de la Clase Array}
+\label{classArray}\index{Array@{Array}}
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArray_ae20b3dbb4aa6083679c0dea835abd861}{Array}} ()
+\begin{DoxyCompactList}\small\item\em Contructor por defecto ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArray_abcabe567f41f7798d2f97babcc443c6f}{$\sim$\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Destructor ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArray_a81da5e767429d41a9ebbe2322fdde153}{Array}} (const int n)
+\begin{DoxyCompactList}\small\item\em Constructor por parámetros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArray_ac97f0bf69ad133fde251c61a9ef664c0}{Array}} (const int n, const long double f)
+\begin{DoxyCompactList}\small\item\em Constructor por parametros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArray_a83cdab5f5e4be15373f0e98d93602c57}{Array}} (const vector$<$ long double $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Constructor por parametros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArray_ad892c4e8cf8761c3940fff5110113986}{Array}} (const \mbox{\hyperlink{classArray}{Array}} \&v)
+\begin{DoxyCompactList}\small\item\em Constructor de copia. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArray}{Array}} \& \mbox{\hyperlink{classArray_a65de238299b3f3ee0d9ea2c782a40d26}{operator=}} (const \mbox{\hyperlink{classArray}{Array}} \&v)
+\begin{DoxyCompactList}\small\item\em Operador de igualdad. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArray}{Array}} \mbox{\hyperlink{classArray_a69a6cda22a2884a8d3a3fd3d098bd07b}{operator+}} (const \mbox{\hyperlink{classArray}{Array}} \&v)
+\begin{DoxyCompactList}\small\item\em Operador Suma. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArray}{Array}} \mbox{\hyperlink{classArray_ab2596757c9d351c191cc4a07f7257824}{operator-\/}} (const \mbox{\hyperlink{classArray}{Array}} \&v)
+\begin{DoxyCompactList}\small\item\em Operador Resta. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArray}{Array}} \mbox{\hyperlink{classArray_a989ea1342a0b2baed60d97e666bd3fee}{operator$\ast$}} (const \mbox{\hyperlink{classArray}{Array}} \&v)
+\begin{DoxyCompactList}\small\item\em Operador Producto. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classArray_af69e814b6b38cfa766d88b033ffd9ea6}{operator==}} (const \mbox{\hyperlink{classArray}{Array}} \&v)
+\begin{DoxyCompactList}\small\item\em Operador Comparación. \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{classArray_a906e5b658323cee060cc0243cfc93b62}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
+\begin{DoxyCompactList}\small\item\em Operador de Indexacion Constante. \end{DoxyCompactList}\item 
+long double \& \mbox{\hyperlink{classArray_a10670c5a12d87fbb212246b6fce418e4}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Operador de Indexacion. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classArray_a00b603f96f245b52895fabc160761ba3}{Tamanio}} () const
+\begin{DoxyCompactList}\small\item\em Get Tamaño. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArray_a360569587fdf350f6397521b7fa1d506}{Limpiar}} ()
+\begin{DoxyCompactList}\small\item\em Elimina todos los elementos del vector. \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{classArray_a69abad4a15c5ab1f3a07578d6e33a044}{Norma\+Infinito}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+istream \& \mbox{\hyperlink{classArray_ac08d1f04ff1addddc1b356432c636765}{operator$>$$>$}} (istream \&entrada, \mbox{\hyperlink{classArray}{Array}} \&v)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador $>$$>$ (cin). \end{DoxyCompactList}\item 
+ostream \& \mbox{\hyperlink{classArray_a92526b895e0f8a3d801d0d4a2e3e186d}{operator$<$$<$}} (ostream \&salida, \mbox{\hyperlink{classArray}{Array}} \&v)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador $<$$<$ (cout). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+
+
+Definición en la línea \mbox{\hyperlink{array_8h_source_l00021}{21}} del archivo \mbox{\hyperlink{array_8h_source}{array.\+h}}.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classArray_ae20b3dbb4aa6083679c0dea835abd861}\label{classArray_ae20b3dbb4aa6083679c0dea835abd861}} 
+\index{Array@{Array}!Array@{Array}}
+\index{Array@{Array}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{Array()}{Array()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Array\+::\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Contructor por defecto ~\newline
+ 
+
+No hacenada ya que de la reserva de memoria se encarga la biblioteca $<$vector$>$ \begin{DoxyVerb} int main()
+ {
+     Array v;
+ }
+\end{DoxyVerb}
+ 
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00005}{5}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_abcabe567f41f7798d2f97babcc443c6f}\label{classArray_abcabe567f41f7798d2f97babcc443c6f}} 
+\index{Array@{Array}!````~Array@{$\sim$Array}}
+\index{````~Array@{$\sim$Array}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{$\sim$Array()}{~Array()}}
+{\footnotesize\ttfamily Array\+::$\sim$\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor ~\newline
+ 
+
+No hacenada ya que de la liberación de memoria se encarga la biblioteca $<$vector$>$ 
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00010}{10}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_a81da5e767429d41a9ebbe2322fdde153}\label{classArray_a81da5e767429d41a9ebbe2322fdde153}} 
+\index{Array@{Array}!Array@{Array}}
+\index{Array@{Array}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{Array()}{Array()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Array\+::\+Array (\begin{DoxyParamCaption}\item[{const int}]{n }\end{DoxyParamCaption})}
+
+
+
+Constructor por parámetros. 
+
+Reserva un vector de tamaño n. 
+\begin{DoxyParams}{Parámetros}
+{\em n} & argumento entero. ~\newline
+ \begin{DoxyVerb} int main()
+ {
+     int n;
+     Array v;
+
+     cout << "Tamaño del vector:";
+     cin >> n;
+
+     v= Array(n);
+ }
+\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00015}{15}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_ac97f0bf69ad133fde251c61a9ef664c0}\label{classArray_ac97f0bf69ad133fde251c61a9ef664c0}} 
+\index{Array@{Array}!Array@{Array}}
+\index{Array@{Array}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{Array()}{Array()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Array\+::\+Array (\begin{DoxyParamCaption}\item[{const int}]{n,  }\item[{const long double}]{f }\end{DoxyParamCaption})}
+
+
+
+Constructor por parametros. 
+
+Reserva un vector de tamaño n e inicializa todas las celdas a f 
+\begin{DoxyParams}{Parámetros}
+{\em n} & argumento entero \\
+\hline
+{\em f} & argumento long double \begin{DoxyVerb} int main()
+ {
+     int n;
+     long double l;
+     Array v;
+
+     cout << "Tamaño del vector: ";
+     cin >> n;
+     cout << "Valor de inicialización: ";
+     cin >> l;
+
+     v= Array(n, l);
+ }
+\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00020}{20}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_a83cdab5f5e4be15373f0e98d93602c57}\label{classArray_a83cdab5f5e4be15373f0e98d93602c57}} 
+\index{Array@{Array}!Array@{Array}}
+\index{Array@{Array}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{Array()}{Array()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Array\+::\+Array (\begin{DoxyParamCaption}\item[{const vector$<$ long double $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Constructor por parametros. 
+
+Convierte un vector $<$long double$>$ en un \mbox{\hyperlink{classArray}{Array}} 
+\begin{DoxyParams}{Parámetros}
+{\em Un} & vector constante de la S\+TL pasado por referencia \begin{DoxyVerb} int main()
+ {
+     vector <long double> auxiliar;
+     Array v;
+     
+     //Trabajamos con el vector auxiliar...
+
+     v= Array(auxiliar);
+ }
+\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00025}{25}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_ad892c4e8cf8761c3940fff5110113986}\label{classArray_ad892c4e8cf8761c3940fff5110113986}} 
+\index{Array@{Array}!Array@{Array}}
+\index{Array@{Array}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{Array()}{Array()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Array\+::\+Array (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classArray}{Array}} \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Constructor de copia. 
+
+Crea un \mbox{\hyperlink{classArray}{Array}} exactamente igual que el pasado por parametro 
+\begin{DoxyParams}{Parámetros}
+{\em v} & \mbox{\hyperlink{classArray}{Array}} constante pasado por referencia \begin{DoxyVerb} int main()
+ {
+     Array a, b;
+     
+     //Trabajamos con a...
+
+     b= Array(a);
+ }
+\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classArray_a360569587fdf350f6397521b7fa1d506}\label{classArray_a360569587fdf350f6397521b7fa1d506}} 
+\index{Array@{Array}!Limpiar@{Limpiar}}
+\index{Limpiar@{Limpiar}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{Limpiar()}{Limpiar()}}
+{\footnotesize\ttfamily void Array\+::\+Limpiar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Elimina todos los elementos del vector. 
+
+\begin{DoxyVerb} int main()
+ {
+     Array a;
+     
+     cin >> a;
+
+     //Trabajo con los datos de a...
+
+     a.Limpiar();
+
+     //Ahora puedo volver a rellenar el vector con otros datos
+
+ }
+\end{DoxyVerb}
+ 
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00106}{106}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classArray_a360569587fdf350f6397521b7fa1d506_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classArray_a69abad4a15c5ab1f3a07578d6e33a044}\label{classArray_a69abad4a15c5ab1f3a07578d6e33a044}} 
+\index{Array@{Array}!NormaInfinito@{NormaInfinito}}
+\index{NormaInfinito@{NormaInfinito}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{NormaInfinito()}{NormaInfinito()}}
+{\footnotesize\ttfamily long double Array\+::\+Norma\+Infinito (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+El método busca el valor absoluto más alto en el vector. \begin{DoxyReturn}{Devuelve}
+El valor basoluto (long double) más alto. \begin{DoxyVerb} int main()
+ {
+     Array a;
+     int n;
+     
+     cin >> a;
+
+     cout << "El máximo del vector es: " << a.NormaInfinito() << endl;
+ }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00111}{111}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_a989ea1342a0b2baed60d97e666bd3fee}\label{classArray_a989ea1342a0b2baed60d97e666bd3fee}} 
+\index{Array@{Array}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArray}{Array}} Array\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classArray}{Array}} \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Operador Producto. 
+
+El método comprueba que ambos \mbox{\hyperlink{classArray}{Array}} tengan el mismo tamaño y crea otro \mbox{\hyperlink{classArray}{Array}} del mismo tamaño con el producto componente a componente de cada \mbox{\hyperlink{classArray}{Array}}. 
+\begin{DoxyParams}{Parámetros}
+{\em v} & \mbox{\hyperlink{classArray}{Array}} constante pasado por referencia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Un \mbox{\hyperlink{classArray}{Array}} con la suma de ambos vectores elemento a elemento. \begin{DoxyVerb} int main()
+ {
+     Array a, b, c;
+     
+     cin >> a;
+     cin >> b;
+     
+     c= a*b;
+ }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00062}{62}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_a69a6cda22a2884a8d3a3fd3d098bd07b}\label{classArray_a69a6cda22a2884a8d3a3fd3d098bd07b}} 
+\index{Array@{Array}!operator+@{operator+}}
+\index{operator+@{operator+}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArray}{Array}} Array\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classArray}{Array}} \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Operador Suma. 
+
+El método comprueba que ambos \mbox{\hyperlink{classArray}{Array}} tengan el mismo tamaño y crea otro \mbox{\hyperlink{classArray}{Array}} del mismo tamaño con la suma componente a componente de cada \mbox{\hyperlink{classArray}{Array}} 
+\begin{DoxyParams}{Parámetros}
+{\em v} & \mbox{\hyperlink{classArray}{Array}} constante pasado por referencia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Un \mbox{\hyperlink{classArray}{Array}} con la suma de ambos vectores elemento a elemento. \begin{DoxyVerb} int main()
+ {
+     Array a, b, c;
+     
+     cin >> a;
+     cin >> b;
+     
+     c= a + b;
+ }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00038}{38}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_ab2596757c9d351c191cc4a07f7257824}\label{classArray_ab2596757c9d351c191cc4a07f7257824}} 
+\index{Array@{Array}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArray}{Array}} Array\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classArray}{Array}} \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Operador Resta. 
+
+El método comprueba que ambos \mbox{\hyperlink{classArray}{Array}} tengan el mismo tamaño y crea otro \mbox{\hyperlink{classArray}{Array}} del mismo tamaño con la resta componente a componente de cada \mbox{\hyperlink{classArray}{Array}} 
+\begin{DoxyParams}{Parámetros}
+{\em v} & \mbox{\hyperlink{classArray}{Array}} constante pasado por referencia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Un \mbox{\hyperlink{classArray}{Array}} con la resta de ambos vectores elemento a elemento. \begin{DoxyVerb} int main()
+ {
+     Array a, b, c;
+     
+     cin >> a;
+     cin >> b;
+     
+     c= a - b;
+ }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00050}{50}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_a65de238299b3f3ee0d9ea2c782a40d26}\label{classArray_a65de238299b3f3ee0d9ea2c782a40d26}} 
+\index{Array@{Array}!operator=@{operator=}}
+\index{operator=@{operator=}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArray}{Array}} \& Array\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classArray}{Array}} \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Operador de igualdad. 
+
+Iguala un \mbox{\hyperlink{classArray}{Array}} a otro (this= v) 
+\begin{DoxyParams}{Parámetros}
+{\em v} & \mbox{\hyperlink{classArray}{Array}} constante pasado por referencia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Un \mbox{\hyperlink{classArray}{Array}} exactamente igual que el pasado por parametro \begin{DoxyVerb} int main()
+ {
+     Array a, b;
+     
+     cin >> a;
+
+     b= a;
+ }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00030}{30}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_af69e814b6b38cfa766d88b033ffd9ea6}\label{classArray_af69e814b6b38cfa766d88b033ffd9ea6}} 
+\index{Array@{Array}!operator==@{operator==}}
+\index{operator==@{operator==}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Array\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classArray}{Array}} \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Operador Comparación. 
+
+El método comprueba que ambos \mbox{\hyperlink{classArray}{Array}} tengan el mismo tamaño y que cada componente sea igual. 
+\begin{DoxyParams}{Parámetros}
+{\em v} & \mbox{\hyperlink{classArray}{Array}} constante pasado por referencia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+T\+R\+UE si ambos \mbox{\hyperlink{classArray}{Array}} son iguales, F\+A\+L\+SE en otro caso. \begin{DoxyVerb} int main()
+ {
+     Array a, b;
+     
+     cin >> a;
+     cin >> b;
+     
+     if(a==b)
+         cout << "Los dos Arrays son iguales." << endl;
+     else
+         cout << "Son distintos." << endl;
+ }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00074}{74}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_a10670c5a12d87fbb212246b6fce418e4}\label{classArray_a10670c5a12d87fbb212246b6fce418e4}} 
+\index{Array@{Array}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily long double \& Array\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Operador de Indexacion. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & Entero para indexar el vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+El valor correspondiente a i para variables constantes. \begin{DoxyVerb} int main()
+ {
+     Array a;
+     int n;
+     
+     cout << "Tamaño: "
+     cin >> n;
+     
+     a= Array(n);
+
+     for(int i=0; i<n; i++)
+         cin >> a[i];
+
+     for(int i=0; i<n; i++)
+         cout << a[i] << " ";
+ }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00094}{94}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_a906e5b658323cee060cc0243cfc93b62}\label{classArray_a906e5b658323cee060cc0243cfc93b62}} 
+\index{Array@{Array}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily long double Array\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Operador de Indexacion Constante. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & Entero para indexar el vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+El valor correspondiente a i para variables constantes. \begin{DoxyVerb} int main()
+ {
+     Array a;
+     int n;
+    
+     cout << "Tamaño: "
+     cin >> n;
+     
+     a= Array(n);
+
+     for(int i=0; i<n; i++)
+         cin >> a[i];
+ }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00087}{87}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_a00b603f96f245b52895fabc160761ba3}\label{classArray_a00b603f96f245b52895fabc160761ba3}} 
+\index{Array@{Array}!Tamanio@{Tamanio}}
+\index{Tamanio@{Tamanio}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{Tamanio()}{Tamanio()}}
+{\footnotesize\ttfamily int Array\+::\+Tamanio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get Tamaño. 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el tamaño del vector. \begin{DoxyVerb} int main()
+ {
+     Array a;
+     int n;
+     
+     cin >> a;
+
+     n= a.Tamanio();
+
+     cout << "El array tiene " << n << " elementos" << endl;
+ }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00101}{101}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+Gráfico de llamadas a esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classArray_a00b603f96f245b52895fabc160761ba3_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Documentación de las funciones relacionadas y clases amigas}
+\mbox{\Hypertarget{classArray_a92526b895e0f8a3d801d0d4a2e3e186d}\label{classArray_a92526b895e0f8a3d801d0d4a2e3e186d}} 
+\index{Array@{Array}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{salida,  }\item[{\mbox{\hyperlink{classArray}{Array}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Sobrecarga del operador $<$$<$ (cout). 
+
+El método escribe una serie de números (1 por línea). 
+\begin{DoxyParams}{Parámetros}
+{\em salida} & Flujo de salida. \\
+\hline
+{\em v} & \mbox{\hyperlink{classArray}{Array}} para obtener los datos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Flujo de salida. \begin{DoxyVerb} int main(int argc, char **argv[])
+ {
+     Array a;
+     ifstream datosMatriz;
+     ofstream datosSalida;
+
+     datosMatriz.open(argv[1]);
+     datosMatriz >> a;
+     datosMatriz.close();
+
+     //Trabajamos con a...
+
+     datosSalida.open("solucion.dat");
+     datosSalida << a;
+     datosSalida.close(); 
+ }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00134}{134}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+\mbox{\Hypertarget{classArray_ac08d1f04ff1addddc1b356432c636765}\label{classArray_ac08d1f04ff1addddc1b356432c636765}} 
+\index{Array@{Array}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Array@{Array}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{entrada,  }\item[{\mbox{\hyperlink{classArray}{Array}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Sobrecarga del operador $>$$>$ (cin). 
+
+El método lee una serie de números (1 por línea), los convierte a long double y los guarda en el mismo orden en el vector datos. 
+\begin{DoxyParams}{Parámetros}
+{\em entrada} & Flujo de entrada. \\
+\hline
+{\em v} & \mbox{\hyperlink{classArray}{Array}} para guardar los datos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Flujo de entrada. \begin{DoxyVerb} int main(int argc, char **argv[])
+ {
+     Array a;
+     ifstream datosMatriz;
+
+     datosMatriz.open(argv[1]);
+     datosMatriz >> a;
+     datosMatriz.close();
+ }
+\end{DoxyVerb}
+ 
+\end{DoxyReturn}
+
+
+Definición en la línea \mbox{\hyperlink{array_8cpp_source_l00124}{124}} del archivo \mbox{\hyperlink{array_8cpp_source}{array.\+cpp}}.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{array_8h}{array.\+h}}\item 
+src/array.\+cpp\end{DoxyCompactItemize}

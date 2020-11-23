@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_jacobi_8cpp">
+<title>Referencia del Archivo src/jacobi.cpp</title>
+<indexterm><primary>src/jacobi.cpp</primary></indexterm>
+<para>
+
+<para>Código en C++ que resuelve el algoritmo de Jacobi para sistemas lineales. </para>
+ 
+</para>
+<programlisting>#include &lt;iostream&gt;
+#include &quot;../include/matrizCSR.h&quot;
+#include &quot;../include/array.h&quot;
+#include &lt;fstream&gt;
+#include &lt;sys/time.h&gt;
+</programlisting>Dependencia gráfica adjunta para jacobi.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="jacobi_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Funciones    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_jacobi_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627"/>int <emphasis role="strong">main</emphasis> (int argc, char **argv)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+
+<para>Código en C++ que resuelve el algoritmo de Jacobi para sistemas lineales. </para>
+
+<para>Omitiendo la lectura y escritura de datos, el algoritmo en pocas palabras sería tal que así:
+<literallayout>&#160;&#xa;</literallayout>
+DO
+<literallayout>&#160;&#xa;</literallayout>
+ {
+<literallayout>&#160;&#xa;</literallayout>
+ x1= x0 + noD*(b - A*x0);
+<literallayout>&#160;&#xa;</literallayout>
+ x0= x1;
+<literallayout>&#160;&#xa;</literallayout>
+} WHILE(MAXIMO_ABSOLUTO(b - A*x0)&gt;(umbralError*MAXIMO_ABSOLUTO(b)));
+<literallayout>&#160;&#xa;</literallayout>
+
+<literallayout>&#160;&#xa;</literallayout>
+ Siendo los datos de entrada:
+<literallayout>&#160;&#xa;</literallayout>
+<link linkend="_classMatrizCSR">MatrizCSR</link> A:= Matriz de coeficientes
+<literallayout>&#160;&#xa;</literallayout>
+<link linkend="_classArray">Array</link> b:= vector del lado derecho
+<literallayout>&#160;&#xa;</literallayout>
+<link linkend="_classArray">Array</link> x0:= Aproximación inicial
+<literallayout>&#160;&#xa;</literallayout>
+long double umbralError:= Precisión de la solución que se quiere obtener (del roden de 1e-20)
+<literallayout>&#160;&#xa;</literallayout>
+
+<literallayout>&#160;&#xa;</literallayout>
+ Los datos que se calculan:
+<literallayout>&#160;&#xa;</literallayout>
+<link linkend="_classMatrizCSR">MatrizCSR</link> noD:= Matriz con la diagonal de A negada
+<literallayout>&#160;&#xa;</literallayout>
+<link linkend="_classArray">Array</link> x1:= Solución del sistema
+<literallayout>&#160;&#xa;</literallayout>
+
+<literallayout>&#160;&#xa;</literallayout>
+ Funciones:
+<literallayout>&#160;&#xa;</literallayout>
+long double MAXIMO_ABSOLUTO(Array):= Devuelve el máximo absoluto de un vector.
+<literallayout>&#160;&#xa;</literallayout>
+
+<literallayout>&#160;&#xa;</literallayout>
+<formalpara><title>Autor</title>
+
+<para>Juan Carlos Sánchez Cara </para>
+</formalpara>
+<formalpara><title>Fecha</title>
+
+<para>20/11/20 </para>
+</formalpara>
+</para>
+<para>
+Definición en el archivo <link linkend="_jacobi_8cpp_source">jacobi.cpp</link>.</para>
+</section>
+</section>

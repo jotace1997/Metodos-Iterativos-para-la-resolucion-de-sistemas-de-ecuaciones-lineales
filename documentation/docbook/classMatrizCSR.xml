@@ -1,0 +1,597 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classMatrizCSR">
+<title>Referencia de la Clase MatrizCSR</title>
+<indexterm><primary>MatrizCSR</primary></indexterm>
+Diagrama de colaboración para MatrizCSR:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classMatrizCSR__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Métodos públicos    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classMatrizCSR_1a5436ed40eeaac0e6cfbd987d03d3ffb4">MatrizCSR</link> ()</para>
+
+<para>Contructor por defecto 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</listitem>
+            <listitem><para><link linkend="_classMatrizCSR_1a693bf325ca0142efbfe85c874febadef">~MatrizCSR</link> ()</para>
+
+<para>Destructor 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</listitem>
+            <listitem><para><link linkend="_classMatrizCSR_1af771d3c43c6b2d01b024cd700b82dac6">MatrizCSR</link> (int f, int nn)</para>
+
+<para>Contructor por parámetros 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</listitem>
+            <listitem><para><link linkend="_classMatrizCSR_1a127e38c201adfbf6180da0bcead8f316">MatrizCSR</link> (const <link linkend="_classMatrizCSR">MatrizCSR</link> &amp;m)</para>
+
+<para>Contructor de copia. </para>
+</listitem>
+            <listitem><para><link linkend="_classMatrizCSR">MatrizCSR</link> &amp; <link linkend="_classMatrizCSR_1a2a52848a0125bd643ebfbf60022e7652">operator=</link> (const <link linkend="_classMatrizCSR">MatrizCSR</link> &amp;m)</para>
+
+<para>Operador de igualdad. </para>
+</listitem>
+            <listitem><para><link linkend="_classArray">Array</link> <link linkend="_classMatrizCSR_1a8fb96ba3f3ae1e9d134d8165f8c4bf33">operator*</link> (const <link linkend="_classArray">Array</link> &amp;v)</para>
+
+<para>Producto Matriz-Vector. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classMatrizCSR_1a8008ce471486c638d609b4a8f9e4d7e8">GetFilas</link> () const</para>
+
+<para>Tamaño de la matriz 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</listitem>
+            <listitem><para><link linkend="_classArray">Array</link> <link linkend="_classMatrizCSR_1ad02f0810adcb6447dd745143d777fb2b">GetNoDiagonal</link> () const</para>
+
+<para>Por cuestiones de eficiencia, para algunas cosas, es bueno tener la diagonal en un vector 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</listitem>
+            <listitem><para><link linkend="_classMatrizCSR">MatrizCSR</link> <link linkend="_classMatrizCSR_1ac541b1a16bfac5a64b8cb31164679533">GetDiagonalInvertida</link> () const</para>
+
+<para>Inversa de la matriz. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classMatrizCSR_1ae3bbfd15eb42115ff203ed69b79e7461">Precondicionar</link> (const <link linkend="_classArray">Array</link> &amp;v)</para>
+
+<para>Precondiciona la matriz para conseguir una convergencia más rápida. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Amigas    </title>
+        <itemizedlist>
+            <listitem><para>istream &amp; <link linkend="_classMatrizCSR_1a8c335e66b2b0a38cf6aabc3a5ac55be2">operator&gt;&gt;</link> (istream &amp;entrada, <link linkend="_classMatrizCSR">MatrizCSR</link> &amp;m)</para>
+
+<para>Sobrecarga del operador &gt;&gt; (cin). </para>
+</listitem>
+            <listitem><para>ostream &amp; <link linkend="_classMatrizCSR_1a15d4a3e9849d032b8fcce8e20acd1e18">operator&lt;&lt;</link> (ostream &amp;salida, <link linkend="_classMatrizCSR">MatrizCSR</link> &amp;m)</para>
+
+<para>Sobrecarga del operador &lt;&lt; (cout). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Descripción detallada</title>
+<para>
+Definición en la línea <link linkend="_matrizCSR_8h_source_1l00019">19</link> del archivo <link linkend="_matrizCSR_8h_source">matrizCSR.h</link>.</para>
+</section>
+<section>
+<title>Documentación del constructor y destructor</title>
+<anchor xml:id="_classMatrizCSR_1a5436ed40eeaac0e6cfbd987d03d3ffb4"/>    <section>
+    <title>MatrizCSR()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>MatrizCSR</primary><secondary>MatrizCSR</secondary></indexterm>
+<indexterm><primary>MatrizCSR</primary><secondary>MatrizCSR</secondary></indexterm>
+<para><computeroutput>MatrizCSR::MatrizCSR ( )</computeroutput></para><para>
+
+<para>Contructor por defecto 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</para>
+
+<para>No hacenada ya que de la reserva de memoria se encarga la biblioteca &lt;vector&gt; <literallayout><computeroutput>   int main()
+   {
+       MatrizCSR m;
+   }
+</computeroutput></literallayout> </para>
+<para>
+Definición en la línea <link linkend="_matrizCSR_8cpp_source_1l00003">3</link> del archivo <link linkend="_matrizCSR_8cpp_source">matrizCSR.cpp</link>.</para>
+    </section><anchor xml:id="_classMatrizCSR_1a693bf325ca0142efbfe85c874febadef"/>    <section>
+    <title>~MatrizCSR()</title>
+<indexterm><primary>~MatrizCSR</primary><secondary>MatrizCSR</secondary></indexterm>
+<indexterm><primary>MatrizCSR</primary><secondary>~MatrizCSR</secondary></indexterm>
+<para><computeroutput>MatrizCSR::~MatrizCSR ( )</computeroutput></para><para>
+
+<para>Destructor 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</para>
+
+<para>No hacenada ya que de la liberación de memoria se encarga la biblioteca &lt;vector&gt; </para>
+<para>
+Definición en la línea <link linkend="_matrizCSR_8cpp_source_1l00013">13</link> del archivo <link linkend="_matrizCSR_8cpp_source">matrizCSR.cpp</link>.</para>
+Gráfico de llamadas para esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classMatrizCSR_a693bf325ca0142efbfe85c874febadef_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classMatrizCSR_1af771d3c43c6b2d01b024cd700b82dac6"/>    <section>
+    <title>MatrizCSR()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>MatrizCSR</primary><secondary>MatrizCSR</secondary></indexterm>
+<indexterm><primary>MatrizCSR</primary><secondary>MatrizCSR</secondary></indexterm>
+<para><computeroutput>MatrizCSR::MatrizCSR (int f, int nn)</computeroutput></para><para>
+
+<para>Contructor por parámetros 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</para>
+
+<para>Reserva memoria para los 3 vectores e iniciliza las variables 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>f</entry>
+                                <entry>
+<para>Filas; </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>nn</entry>
+                                <entry>
+<para>Elementos no nulos <literallayout><computeroutput>   int main()
+   {
+       int fil, noNulos;
+       MatrizCSR m;
+
+       cout &lt;&lt; &quot;Filas y elementos no nulos de la matriz: &quot;;
+       cin &gt;&gt; fil &gt;&gt; noNulos;
+
+       m= MatrizCSR(fil, noNulos);  //valores.size()= idColumas.size()= noNulos; ptrFilas= fil+1;
+   }
+</computeroutput></literallayout> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definición en la línea <link linkend="_matrizCSR_8cpp_source_1l00023">23</link> del archivo <link linkend="_matrizCSR_8cpp_source">matrizCSR.cpp</link>.</para>
+    </section><anchor xml:id="_classMatrizCSR_1a127e38c201adfbf6180da0bcead8f316"/>    <section>
+    <title>MatrizCSR()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>MatrizCSR</primary><secondary>MatrizCSR</secondary></indexterm>
+<indexterm><primary>MatrizCSR</primary><secondary>MatrizCSR</secondary></indexterm>
+<para><computeroutput>MatrizCSR::MatrizCSR (const <link linkend="_classMatrizCSR">MatrizCSR</link> &amp; m)</computeroutput></para><para>
+
+<para>Contructor de copia. </para>
+</para>
+
+<para>Crea una <link linkend="_classMatrizCSR">MatrizCSR</link> exactamente igual que ls pasada por parametro 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para><link linkend="_classMatrizCSR">MatrizCSR</link> constante pasada por referencia 
+<literallayout>&#160;&#xa;</literallayout>
+ <literallayout><computeroutput>   int main()
+   {
+       MatrizCSR a, b;
+
+       cin &gt;&gt; a;
+
+       b= MatrizCSR(a);
+   }
+</computeroutput></literallayout> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definición en la línea <link linkend="_matrizCSR_8cpp_source_1l00035">35</link> del archivo <link linkend="_matrizCSR_8cpp_source">matrizCSR.cpp</link>.</para>
+</section>
+</section>
+<section>
+<title>Documentación de las funciones miembro</title>
+<anchor xml:id="_classMatrizCSR_1ac541b1a16bfac5a64b8cb31164679533"/>    <section>
+    <title>GetDiagonalInvertida()</title>
+<indexterm><primary>GetDiagonalInvertida</primary><secondary>MatrizCSR</secondary></indexterm>
+<indexterm><primary>MatrizCSR</primary><secondary>GetDiagonalInvertida</secondary></indexterm>
+<para><computeroutput><link linkend="_classMatrizCSR">MatrizCSR</link> MatrizCSR::GetDiagonalInvertida ( ) const</computeroutput></para><para>
+
+<para>Inversa de la matriz. </para>
+</para>
+
+<para>Creamos una matriz en la que las filas coinciden con los elementos no nulos. <formalpara><title>Devuelve</title>
+
+<para>Devuelve una <link linkend="_classMatrizCSR">MatrizCSR</link> con la inversa de la diagonal de la matriz. <literallayout><computeroutput>   int main()
+   {
+        MatrizCSR a, noD;
+        MatrizCSR b;
+
+        cin &gt;&gt; a;
+        noD= a.GetDiagonalInvertida();
+
+        b= noD*a;   //La diagonal de b son todos 1
+   }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_matrizCSR_8cpp_source_1l00110">110</link> del archivo <link linkend="_matrizCSR_8cpp_source">matrizCSR.cpp</link>.</para>
+    </section><anchor xml:id="_classMatrizCSR_1a8008ce471486c638d609b4a8f9e4d7e8"/>    <section>
+    <title>GetFilas()</title>
+<indexterm><primary>GetFilas</primary><secondary>MatrizCSR</secondary></indexterm>
+<indexterm><primary>MatrizCSR</primary><secondary>GetFilas</secondary></indexterm>
+<para><computeroutput>int MatrizCSR::GetFilas ( ) const</computeroutput></para><para>
+
+<para>Tamaño de la matriz 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</para>
+
+<para><formalpara><title>Devuelve</title>
+
+<para>Devuelve el número de filas (o columnas, da igual ya que la matriz es cuadrada) de la matriz <literallayout><computeroutput>   int main()
+   {
+       MatrizCSR a;
+
+       cin &gt;&gt; a;
+
+       cout &lt;&lt; &quot;La matriz a tiene &quot; &lt;&lt; a.GetFilas() &lt;&lt; &quot; filas&quot; &lt;&lt; endl;
+   }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="_classMatrizCSR_1ad02f0810adcb6447dd745143d777fb2b"/>    <section>
+    <title>GetNoDiagonal()</title>
+<indexterm><primary>GetNoDiagonal</primary><secondary>MatrizCSR</secondary></indexterm>
+<indexterm><primary>MatrizCSR</primary><secondary>GetNoDiagonal</secondary></indexterm>
+<para><computeroutput><link linkend="_classArray">Array</link> MatrizCSR::GetNoDiagonal ( ) const</computeroutput></para><para>
+
+<para>Por cuestiones de eficiencia, para algunas cosas, es bueno tener la diagonal en un vector 
+<literallayout>&#160;&#xa;</literallayout>
+ </para>
+</para>
+
+<para>Dos bucles anidados que recorren la matriz por filas y cuando coincidan el indice de fila y columna escribir el valor correspondiente invertido en el vector. <formalpara><title>Devuelve</title>
+
+<para>Devuelve la diagonal negada en forma de <link linkend="_classArray">Array</link> 
+<literallayout>&#160;&#xa;</literallayout>
+ <literallayout><computeroutput>   int main()
+   {
+        MatrizCSR a;
+        Array noD;
+
+        cin &gt;&gt; a;
+
+        noD= a.GetNoDiagonal();
+   }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_matrizCSR_8cpp_source_1l00092">92</link> del archivo <link linkend="_matrizCSR_8cpp_source">matrizCSR.cpp</link>.</para>
+Gráfico de llamadas para esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classMatrizCSR_ad02f0810adcb6447dd745143d777fb2b_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classMatrizCSR_1a8fb96ba3f3ae1e9d134d8165f8c4bf33"/>    <section>
+    <title>operator*()</title>
+<indexterm><primary>operator*</primary><secondary>MatrizCSR</secondary></indexterm>
+<indexterm><primary>MatrizCSR</primary><secondary>operator*</secondary></indexterm>
+<para><computeroutput><link linkend="_classArray">Array</link> MatrizCSR::operator* (const <link linkend="_classArray">Array</link> &amp; v)</computeroutput></para><para>
+
+<para>Producto Matriz-Vector. </para>
+</para>
+
+<para>Método más importante de todos, el método crea un <link linkend="_classArray">Array</link> del mismo tamaño que v y mediante un bucle desde 0 hasta this-&gt;ptrFilas.size()-1 lo va rellenando, cada iteración de este bucle corresponde a una fila de la matriz, por tanto, en cada iteración de este bucle se multiplica el valor correspondiente del <link linkend="_classArray">Array</link> con toda la fila, se suman estos valores y se introducen en el vector resultado. Para ello, se declaran dos variables, inicio y fin, inicio valdrá this-&gt;ptrFilas[i] y fin this-&gt;ptrFilas[i+1] (i es el iterador del primer bucle) ahora ya tenemos el inicio y final de fila por tanto, creamos otro bucle que recorra el vector valores desde inicio hasta fin que sume todos los productos del valor correspondiente del vector con los valores de la fila en cuestión y cuando acabe, escribimos la suma en el vector resultado. 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para><link linkend="_classArray">Array</link> constante pasado por referencia. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Devuelve</title>
+
+<para>Un <link linkend="_classArray">Array</link> resultado de la multiplicación de la matriz por el vector. 
+<literallayout>&#160;&#xa;</literallayout>
+ <literallayout><computeroutput>   int main()
+   {
+       MatrizCSR m;
+       Array v, mul;
+
+       cin &gt;&gt; m;
+       cin &gt;&gt; v
+
+       mul= m*v;
+
+       cout &lt;&lt; &quot;m*v= &quot; &lt;&lt; mul &lt;&lt; endl;
+   }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_matrizCSR_8cpp_source_1l00060">60</link> del archivo <link linkend="_matrizCSR_8cpp_source">matrizCSR.cpp</link>.</para>
+Gráfico de llamadas para esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classMatrizCSR_a8fb96ba3f3ae1e9d134d8165f8c4bf33_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_classMatrizCSR_1a2a52848a0125bd643ebfbf60022e7652"/>    <section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>MatrizCSR</secondary></indexterm>
+<indexterm><primary>MatrizCSR</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_classMatrizCSR">MatrizCSR</link> &amp; MatrizCSR::operator= (const <link linkend="_classMatrizCSR">MatrizCSR</link> &amp; m)</computeroutput></para><para>
+
+<para>Operador de igualdad. </para>
+</para>
+
+<para>Iguala una <link linkend="_classMatrizCSR">MatrizCSR</link> a otra (this= m) 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para><link linkend="_classMatrizCSR">MatrizCSR</link> constante pasada por referencia </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Devuelve</title>
+
+<para>Una <link linkend="_classMatrizCSR">MatrizCSR</link> exactamente igual que la pasada por parametro <literallayout><computeroutput>   int main()
+   {
+       MatrizCSR a, b;
+
+       cin &gt;&gt; a;
+
+       b= a;
+   }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_matrizCSR_8cpp_source_1l00045">45</link> del archivo <link linkend="_matrizCSR_8cpp_source">matrizCSR.cpp</link>.</para>
+    </section><anchor xml:id="_classMatrizCSR_1ae3bbfd15eb42115ff203ed69b79e7461"/>    <section>
+    <title>Precondicionar()</title>
+<indexterm><primary>Precondicionar</primary><secondary>MatrizCSR</secondary></indexterm>
+<indexterm><primary>MatrizCSR</primary><secondary>Precondicionar</secondary></indexterm>
+<para><computeroutput>void MatrizCSR::Precondicionar (const <link linkend="_classArray">Array</link> &amp; v)</computeroutput></para><para>
+
+<para>Precondiciona la matriz para conseguir una convergencia más rápida. </para>
+</para>
+
+<para>El método recorre la matriz y multiplica todos los valores de la misma fila con el valor correspondiente del vector (el vector es la inversa de esta matriz). 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>v</entry>
+                                <entry>
+<para>El vector que &quot;multiplicará&quot; la matriz 
+<literallayout>&#160;&#xa;</literallayout>
+ <literallayout><computeroutput>   int main()
+   {
+        MatrizCSR a;
+        Array P;
+
+        cin &gt;&gt; a;
+
+        P= a.GetNoDiagonal();
+
+        a.Precondicionar(P);
+
+        cout &lt;&lt; a; //La diagonal de a son todos 1
+   }
+</computeroutput></literallayout> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definición en la línea <link linkend="_matrizCSR_8cpp_source_1l00083">83</link> del archivo <link linkend="_matrizCSR_8cpp_source">matrizCSR.cpp</link>.</para>
+Gráfico de llamadas para esta función:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classMatrizCSR_ae3bbfd15eb42115ff203ed69b79e7461_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Documentación de las funciones relacionadas y clases amigas</title>
+<anchor xml:id="_classMatrizCSR_1a15d4a3e9849d032b8fcce8e20acd1e18"/>    <section>
+    <title>operator&lt;&lt;</title>
+<indexterm><primary>operator&lt;&lt;</primary><secondary>MatrizCSR</secondary></indexterm>
+<indexterm><primary>MatrizCSR</primary><secondary>operator&lt;&lt;</secondary></indexterm>
+<para><computeroutput>ostream&amp; operator&lt;&lt; (ostream &amp; salida, <link linkend="_classMatrizCSR">MatrizCSR</link> &amp; m)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Sobrecarga del operador &lt;&lt; (cout). </para>
+</para>
+
+<para>Hace lo contrario que el operador &gt;&gt; convierte una matriz CSR en una matriz en formato matrix market 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>salida</entry>
+                                <entry>
+<para>Flujo de salida. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para><link linkend="_classMatrizCSR">MatrizCSR</link> para obtener los datos. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Devuelve</title>
+
+<para>Flujo de salida. <literallayout><computeroutput>   int main(int argc, char **argv[])
+   {
+        MatrizCSR a;
+        ifstream datosMatriz;
+        ofstream solucionMatriz;
+
+        datosMatriz.open(argv[1]);     
+        datosMatriz &gt;&gt; A;
+        datosMatriz.close();
+
+        //Trabajar con A
+
+        solucionMatriz.open(&quot;solucion.dat&quot;);    //Nombre que le hemos dado al fichero
+        solucionMatriz &lt;&lt; A;
+        solucionMatriz.close();
+   }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_matrizCSR_8cpp_source_1l00219">219</link> del archivo <link linkend="_matrizCSR_8cpp_source">matrizCSR.cpp</link>.</para>
+    </section><anchor xml:id="_classMatrizCSR_1a8c335e66b2b0a38cf6aabc3a5ac55be2"/>    <section>
+    <title>operator&gt;&gt;</title>
+<indexterm><primary>operator&gt;&gt;</primary><secondary>MatrizCSR</secondary></indexterm>
+<indexterm><primary>MatrizCSR</primary><secondary>operator&gt;&gt;</secondary></indexterm>
+<para><computeroutput>istream&amp; operator&gt;&gt; (istream &amp; entrada, <link linkend="_classMatrizCSR">MatrizCSR</link> &amp; m)<computeroutput>[friend]</computeroutput></computeroutput></para><para>
+
+<para>Sobrecarga del operador &gt;&gt; (cin). </para>
+</para>
+
+<para>El método lee matrices en formato matrix market de un fichero y las convierte en formato CSR. Para ello, lee las dimensiones de la matriz en la primera línea y seguidamente reserva memoria para los 3 vectores. Luego lee linea a linea el archivo, cada línea se compone de 3 valores: fila columna valor Mientras no cambie la fila se incrementa un contador para saber cuantos valores hay en la fila y la columna y el valor se escriben en los vectores correspondientes en el mismo orden en el que se leen, cuando el valor de la fila cambia, se escribe el valor que haya en el contador en el vector prtFilas y se vuelve a inicializar el contador a 0. 
+                <formalpara>
+                    <title>
+Parámetros                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>entrada</entry>
+                                <entry>
+<para>Flujo de entrada. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>m</entry>
+                                <entry>
+<para><link linkend="_classMatrizCSR">MatrizCSR</link> para guardar los datos. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Devuelve</title>
+
+<para>Flujo de entrada. <literallayout><computeroutput>   int main(int argc, char **argv[])
+   {
+        MatrizCSR a;
+        ifstream datosMatriz;
+
+        datosMatriz.open(argv[1]);      //Path del fichero con los datos de la matriz en matrix market
+        datosMatriz &gt;&gt; A;
+        datosMatriz.close();
+   }
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+<para>
+Definición en la línea <link linkend="_matrizCSR_8cpp_source_1l00137">137</link> del archivo <link linkend="_matrizCSR_8cpp_source">matrizCSR.cpp</link>.</para>
+</section>
+<para>
+La documentación para esta clase fue generada a partir de los siguientes ficheros:</para>
+include/<link linkend="_matrizCSR_8h">matrizCSR.h</link>src/matrizCSR.cpp</section>
+</section>
